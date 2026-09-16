@@ -1,0 +1,743 @@
+/* =========================================================
+   ORION — ESTRUTURA
+   Layout principal do sistema
+========================================================= */
+
+
+/* =========================================================
+   01. FUNDO DO SISTEMA
+========================================================= */
+
+.system-background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: var(--z-background);
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(185, 220, 255, 0.035),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(185, 220, 255, 0.025),
+            transparent 40%
+        ),
+        var(--color-background);
+}
+
+
+/* =========================================================
+   02. LUZES AMBIENTAIS
+========================================================= */
+
+.ambient-light {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.15;
+
+    pointer-events: none;
+}
+
+.ambient-light-one {
+    top: -300px;
+    left: -200px;
+
+    background: rgba(185, 220, 255, 0.15);
+}
+
+.ambient-light-two {
+    right: -300px;
+    bottom: -250px;
+
+    background: rgba(100, 160, 220, 0.10);
+}
+
+.ambient-light-three {
+    top: 40%;
+    left: 45%;
+
+    width: 300px;
+    height: 300px;
+
+    background: rgba(185, 220, 255, 0.05);
+}
+
+
+/* =========================================================
+   03. GRADE TECNOLÓGICA
+========================================================= */
+
+.system-background .tech-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   04. LINHA DE VARREDURA
+========================================================= */
+
+.scanline {
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: rgba(185, 220, 255, 0.035);
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   05. APLICAÇÃO
+========================================================= */
+
+.app {
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+    min-height: 100vh;
+
+    z-index: var(--z-base);
+}
+
+
+/* =========================================================
+   06. BARRA LATERAL
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 270px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--space-7) var(--space-5);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 13, 18, 0.96),
+            rgba(4, 6, 8, 0.98)
+        );
+
+    border-right: 1px solid var(--color-border);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    z-index: var(--z-navigation);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   07. IDENTIDADE DA MARCA
+========================================================= */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-7);
+}
+
+.brand-information {
+    min-width: 0;
+}
+
+.brand-information h1 {
+    font-size: 1rem;
+
+    letter-spacing: 0.16em;
+
+    color: var(--color-text);
+
+    white-space: nowrap;
+}
+
+.brand-information span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 0.55rem;
+
+    font-weight: var(--font-weight-medium);
+
+    letter-spacing: 0.15em;
+
+    color: var(--color-text-muted);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   08. SÍMBOLO DA SEXTA-FEIRA
+========================================================= */
+
+.brand-symbol {
+    position: relative;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-symbol::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border: 1px solid var(--color-accent);
+
+    transform: rotate(45deg);
+
+    opacity: 0.7;
+}
+
+.brand-symbol span {
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    border-radius: 50%;
+
+    background: var(--color-accent);
+
+    box-shadow:
+        0 0 6px var(--color-accent);
+}
+
+.brand-symbol span:nth-child(1) {
+    top: 6px;
+}
+
+.brand-symbol span:nth-child(2) {
+    right: 6px;
+}
+
+.brand-symbol span:nth-child(3) {
+    bottom: 6px;
+}
+
+
+/* =========================================================
+   09. STATUS DA BARRA LATERAL
+========================================================= */
+
+.sidebar-status {
+    padding: var(--space-4);
+
+    margin-bottom: var(--space-6);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-md);
+
+    background:
+        rgba(255, 255, 255, 0.015);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    font-size: var(--font-size-xs);
+
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: 0.08em;
+
+    color: var(--color-online);
+}
+
+.status-description {
+    display: block;
+
+    margin-top: var(--space-2);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.12em;
+
+    color: var(--color-text-dim);
+}
+
+
+/* =========================================================
+   10. NAVEGAÇÃO
+========================================================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-6);
+
+    flex: 1;
+}
+
+.navigation-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.navigation-title {
+    margin-bottom: var(--space-2);
+    padding-left: var(--space-2);
+
+    font-size: 0.55rem;
+
+    font-weight: var(--font-weight-semibold);
+
+    letter-spacing: 0.18em;
+
+    color: var(--color-text-dim);
+}
+
+
+/* =========================================================
+   11. ITEM DE NAVEGAÇÃO
+========================================================= */
+
+.navigation-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-height: 42px;
+
+    padding: 0 var(--space-3);
+
+    border: 1px solid transparent;
+
+    border-radius: var(--radius-sm);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+
+    transition:
+        color var(--transition-normal),
+        background var(--transition-normal),
+        border-color var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.navigation-item:hover {
+    color: var(--color-text);
+
+    background:
+        rgba(185, 220, 255, 0.035);
+
+    border-color: var(--color-border);
+
+    transform: translateX(2px);
+}
+
+.navigation-item.active {
+    color: var(--color-accent);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(185, 220, 255, 0.07),
+            rgba(185, 220, 255, 0.015)
+        );
+
+    border-color:
+        rgba(185, 220, 255, 0.10);
+}
+
+.navigation-item.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+    top: 8px;
+    bottom: 8px;
+
+    width: 2px;
+
+    border-radius: var(--radius-round);
+
+    background: var(--color-accent);
+
+    box-shadow:
+        0 0 10px var(--color-accent-glow);
+}
+
+.navigation-icon {
+    width: 18px;
+
+    display: inline-flex;
+    justify-content: center;
+
+    font-size: 0.95rem;
+
+    color: currentColor;
+}
+
+
+/* =========================================================
+   12. RODAPÉ DA BARRA LATERAL
+========================================================= */
+
+.sidebar-footer {
+    margin-top: auto;
+
+    padding-top: var(--space-5);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.system-version {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: var(--space-3);
+}
+
+.system-version span {
+    font-size: 0.52rem;
+
+    letter-spacing: 0.12em;
+
+    color: var(--color-text-dim);
+}
+
+.system-version strong {
+    font-family: var(--font-display);
+
+    font-size: 0.55rem;
+
+    font-weight: var(--font-weight-medium);
+
+    letter-spacing: 0.08em;
+
+    color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   13. CONTEÚDO PRINCIPAL
+========================================================= */
+
+.main-content {
+    width: calc(100% - 270px);
+
+    min-height: 100vh;
+
+    margin-left: 270px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   14. BARRA SUPERIOR
+========================================================= */
+
+.topbar {
+    position: sticky;
+
+    top: 0;
+
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 var(--space-7);
+
+    background:
+        rgba(4, 6, 8, 0.72);
+
+    border-bottom: 1px solid var(--color-border);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    z-index: var(--z-header);
+}
+
+.topbar-left,
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-right {
+    gap: var(--space-6);
+}
+
+
+/* =========================================================
+   15. CAMINHO DO SISTEMA
+========================================================= */
+
+.system-breadcrumb {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.12em;
+}
+
+.system-breadcrumb span {
+    color: var(--color-text-dim);
+}
+
+.system-breadcrumb strong {
+    font-weight: var(--font-weight-medium);
+
+    color: var(--color-text-soft);
+}
+
+.breadcrumb-separator {
+    color: var(--color-text-dim) !important;
+}
+
+
+/* =========================================================
+   16. CONEXÃO
+========================================================= */
+
+.connection-status {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.10em;
+
+    color: var(--color-text-muted);
+}
+
+
+/* =========================================================
+   17. RELÓGIO
+========================================================= */
+
+.system-time {
+    min-width: 75px;
+
+    font-family: var(--font-display);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.08em;
+
+    text-align: right;
+
+    color: var(--color-accent);
+}
+
+
+/* =========================================================
+   18. RESPONSIVIDADE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .main-content {
+        width: calc(100% - 230px);
+
+        margin-left: 230px;
+    }
+
+    .topbar {
+        padding: 0 var(--space-5);
+    }
+
+}
+
+
+/* =========================================================
+   19. RESPONSIVIDADE — MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        position: fixed;
+
+        width: 100%;
+        height: auto;
+
+        top: auto;
+        bottom: 0;
+
+        padding: var(--space-2) var(--space-3);
+
+        flex-direction: row;
+
+        border-right: none;
+
+        border-top: 1px solid var(--color-border);
+
+        overflow: hidden;
+    }
+
+    .sidebar-brand,
+    .sidebar-status,
+    .sidebar-footer,
+    .navigation-title {
+        display: none;
+    }
+
+    .navigation {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: space-around;
+
+        gap: 4px;
+    }
+
+    .navigation-group {
+        display: contents;
+    }
+
+    .navigation-item {
+        flex: 1;
+
+        min-height: 52px;
+
+        justify-content: center;
+
+        padding: 5px;
+
+        flex-direction: column;
+
+        gap: 3px;
+
+        font-size: 0.52rem;
+
+        text-align: center;
+    }
+
+    .navigation-item.active::before {
+        top: auto;
+        bottom: -1px;
+
+        left: 20%;
+        right: 20%;
+
+        width: auto;
+        height: 2px;
+    }
+
+    .navigation-icon {
+        width: auto;
+
+        font-size: 0.9rem;
+    }
+
+    .main-content {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding-bottom: 70px;
+    }
+
+    .topbar {
+        min-height: 62px;
+    }
+
+    .connection-status {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   20. RESPONSIVIDADE — CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .topbar {
+        padding: 0 var(--space-4);
+    }
+
+    .system-breadcrumb span:first-child,
+    .breadcrumb-separator {
+        display: none;
+    }
+
+    .system-breadcrumb {
+        font-size: 0.55rem;
+    }
+
+    .system-time {
+        font-size: 0.62rem;
+    }
+
+}

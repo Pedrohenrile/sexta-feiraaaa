@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURAÇÕES BÁSICAS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ORION — Sistema pessoal de inteligência"
+    >
+
+    <meta
+        name="theme-color"
+        content="#040608"
+    >
+
+    <title>ORION — Central de Comando</title>
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS DO SISTEMA
+    ====================================================== -->
+
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CAMADA VISUAL DO SISTEMA
+    ====================================================== -->
+
+    <div class="system-background">
+
+        <div class="ambient-light ambient-light-one"></div>
+
+        <div class="ambient-light ambient-light-two"></div>
+
+        <div class="ambient-light ambient-light-three"></div>
+
+        <div class="tech-grid"></div>
+
+        <div class="scanline"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APLICAÇÃO
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             BARRA LATERAL
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- IDENTIDADE -->
+
+            <div class="sidebar-brand">
+
+                <div class="brand-symbol">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="brand-information">
+
+                    <h1>SEXTA-FEIRA</h1>
+
+                    <span>
+                        SISTEMA PESSOAL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="sidebar-status">
+
+                <div class="status-indicator">
+
+                    <span class="system-dot"></span>
+
+                    <span>SISTEMA ONLINE</span>
+
+                </div>
+
+
+                <span class="status-description">
+                    NÚCLEO OPERACIONAL
+                </span>
+
+            </div>
+
+
+            <!-- NAVEGAÇÃO -->
+
+            <nav class="navigation">
+
+
+                <!-- CENTRAL -->
+
+                <div class="navigation-group">
+
+                    <span class="navigation-title">
+                        CENTRAL
+                    </span>
+
+
+                    <a
+                        href="index.html"
+                        class="navigation-item active"
+                    >
+
+                        <span class="navigation-icon">
+                            ◈
+                        </span>
+
+                        <span>
+                            Central de Comando
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="assistant.html"
+                        class="navigation-item"
+                    >
+
+                        <span class="navigation-icon">
+                            ◉
+                        </span>
+
+                        <span>
+                            Assistente
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="agenda.html"
+                        class="navigation-item"
+                    >
+
+                        <span class="navigation-icon">
+                            ◫
+                        </span>
+
+                        <span>
+                            Agenda
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="memory.html"
+                        class="navigation-item"
+                    >
+
+                        <span class="navigation-icon">
+                            ◎
+                        </span>
+
+                        <span>
+                            Memória
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- DESENVOLVIMENTO -->
+
+                <div class="navigation-group">
+
+                    <span class="navigation-title">
+                        DESENVOLVIMENTO
+                    </span>
+
+
+                    <a
+                        href="performance.html"
+                        class="navigation-item"
+                    >
+
+                        <span class="navigation-icon">
+                            ◌
+                        </span>
+
+                        <span>
+                            Desempenho
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="projects.html"
+                        class="navigation-item"
+                    >
+
+                        <span class="navigation-icon">
+                            ◇
+                        </span>
+
+                        <span>
+                            Projetos
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- SISTEMA -->
+
+                <div class="navigation-group">
+
+                    <span class="navigation-title">
+                        SISTEMA
+                    </span>
+
+
+                    <a
+                        href="system.html"
+                        class="navigation-item"
+                    >
+
+                        <span class="navigation-icon">
+                            ⛨
+                        </span>
+
+                        <span>
+                            Segurança
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- RODAPÉ DA BARRA -->
+
+            <div class="sidebar-footer">
+
+                <div class="system-version">
+
+                    <span>
+                        INSTÂNCIA LOCAL
+                    </span>
+
+                    <strong>
+                        ORION 1.0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             ÁREA PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 BARRA SUPERIOR
+            ================================================== -->
+
+            <header class="topbar">
+
+
+                <div class="topbar-left">
+
+                    <div class="system-breadcrumb">
+
+                        <span>
+                            ORION
+                        </span>
+
+                        <span class="breadcrumb-separator">
+                            /
+                        </span>
+
+                        <strong>
+                            CENTRAL DE COMANDO
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <!-- CONEXÃO -->
+
+                    <div class="connection-status">
+
+                        <span class="system-dot"></span>
+
+                        <span>
+                            CONEXÃO SEGURA
+                        </span>
+
+                    </div>
+
+
+                    <!-- HORA -->
+
+                    <div class="system-time">
+
+                        <span id="current-time">
+                            00:00:00
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 CONTEÚDO
+            ================================================== -->
+
+            <section class="dashboard">
+
+
+                <!-- =================================================
+                     CABEÇALHO DO PAINEL
+                ================================================== -->
+
+                <div class="dashboard-header">
+
+
+                    <div class="dashboard-heading">
+
+                        <span class="section-label">
+                            SISTEMA PRINCIPAL
+                        </span>
+
+                        <h2>
+                            CENTRAL DE COMANDO
+                        </h2>
+
+                        <p>
+                            Visão geral do seu sistema pessoal.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-date">
+
+                        <span id="current-day">
+                            SEGUNDA-FEIRA
+                        </span>
+
+                        <strong id="current-date">
+                            00 DE JANEIRO DE 2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SAUDAÇÃO
+                ================================================== -->
+
+             <section class="welcome-panel glass">
+
+    <!-- VÍDEO DE FUNDO DA CENTRAL -->
+    <video
+        class="command-background-video"
+        autoplay
+        muted
+        loop
+        playsinline
+    >
+        <source
+            src="centralcomandologo.mp4"
+            type="video/mp4"
+        >
+    </video>
+
+    <!-- CAMADA ESCURA SOBRE O VÍDEO -->
+    <div class="command-background-overlay"></div>
+
+
+    <!-- CONTEÚDO DA CENTRAL -->
+    <div class="welcome-content">
+
+        <div class="welcome-status-text">
+
+            <span>SEXTA-FEIRA</span>
+
+            <h2>SISTEMA ONLINE</h2>
+
+            <p>
+                Seu sistema pessoal está pronto.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- INFORMAÇÃO DO NÚCLEO -->
+    <div class="core-information">
+
+        <span>NÚCLEO</span>
+
+        <strong>OPERACIONAL</strong>
+
+    </div>
+
+</section>
+
+
+
+                <!-- =================================================
+                     CARTÕES PRINCIPAIS
+                ================================================== -->
+
+                <section class="dashboard-grid">
+
+
+                    <!-- AGENDA -->
+
+                    <article class="dashboard-card glass">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    AGENDA
+                                </span>
+
+                                <h3>
+                                    Hoje
+                                </h3>
+
+                            </div>
+
+                            <span class="card-icon">
+                                ◫
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-main-value">
+
+                            <strong id="agenda-count">
+                                0
+                            </strong>
+
+                            <span>
+                                compromissos
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-footer">
+
+                            <span>
+                                Próxima atividade
+                            </span>
+
+                            <strong id="next-event">
+                                Nenhuma registrada
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- OBJETIVOS -->
+
+                    <article class="dashboard-card glass">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    OBJETIVOS
+                                </span>
+
+                                <h3>
+                                    Progresso
+                                </h3>
+
+                            </div>
+
+                            <span class="card-icon">
+                                ◇
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-main-value">
+
+                            <strong>
+                                0%
+                            </strong>
+
+                            <span>
+                                progresso geral
+                            </span>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width: 0%;"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="card-footer">
+
+                            <span>
+                                Objetivos ativos
+                            </span>
+
+                            <strong>
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ALERTAS -->
+
+                    <article class="dashboard-card glass">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    ALERTAS
+                                </span>
+
+                                <h3>
+                                    Atenção
+                                </h3>
+
+                            </div>
+
+                            <span class="card-icon">
+                                !
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-main-value">
+
+                            <strong>
+                                0
+                            </strong>
+
+                            <span>
+                                alertas ativos
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-footer">
+
+                            <span>
+                                Estado
+                            </span>
+
+                            <strong class="text-online">
+                                NORMAL
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- DESEMPENHO -->
+
+                    <article class="dashboard-card glass">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    DESEMPENHO
+                                </span>
+
+                                <h3>
+                                    Visão geral
+                                </h3>
+
+                            </div>
+
+                            <span class="card-icon">
+                                ◌
+                            </span>
+
+                        </div>
+
+
+                        <div class="performance-mini">
+
+                            <div class="performance-item">
+
+                                <span>
+                                    Academia
+                                </span>
+
+                                <strong>
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="performance-item">
+
+                                <span>
+                                    Estudos
+                                </span>
+
+                                <strong>
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="performance-item">
+
+                                <span>
+                                    Projetos
+                                </span>
+
+                                <strong>
+                                    0%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card-footer">
+
+                            <span>
+                                Análise
+                            </span>
+
+                            <strong>
+                                Aguardando dados
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     PRÓXIMA ATIVIDADE
+                ================================================== -->
+
+                <section class="next-activity glass">
+
+
+                    <div class="next-activity-header">
+
+                        <span class="section-label">
+                            PRÓXIMA ATIVIDADE
+                        </span>
+
+                        <span class="activity-status">
+                            AGUARDANDO
+                        </span>
+
+                    </div>
+
+
+                    <div class="next-activity-content">
+
+
+                        <div class="activity-icon">
+                            ◷
+                        </div>
+
+
+                        <div class="activity-information">
+
+                            <span>
+                                Nenhuma atividade programada
+                            </span>
+
+                            <strong>
+                                Sua agenda está livre.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="activity-countdown">
+
+                            <span>
+                                CONTAGEM REGRESSIVA
+                            </span>
+
+                            <strong>
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SEXTA-FEIRA
+                ================================================== -->
+
+                <section class="assistant-status glass">
+
+
+                    <div class="assistant-identity">
+
+
+                        <div class="assistant-symbol">
+
+                            <span></span>
+
+                            <span></span>
+
+                            <span></span>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="section-label">
+                                INTELIGÊNCIA PESSOAL
+                            </span>
+
+                            <h3>
+                                SEXTA-FEIRA
+                            </h3>
+
+                            <p>
+                                Núcleo de inteligência operacional.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="assistant-capabilities">
+
+
+                        <div class="capability">
+
+                            <span class="system-dot"></span>
+
+                            <span>
+                                MEMÓRIA ATIVA
+                            </span>
+
+                        </div>
+
+
+                        <div class="capability">
+
+                            <span class="system-dot"></span>
+
+                            <span>
+                                VOZ PRONTA
+                            </span>
+
+                        </div>
+
+
+                        <div class="capability">
+
+                            <span class="system-dot"></span>
+
+                            <span>
+                                CONTEXTO ATIVO
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     AÇÕES RÁPIDAS
+                ================================================== -->
+
+                <section class="quick-actions">
+
+
+                    <div class="section-heading">
+
+                        <span class="section-label">
+                            AÇÕES RÁPIDAS
+                        </span>
+
+                        <h3>
+                            Comandos
+                        </h3>
+
+                    </div>
+
+
+                    <div class="quick-actions-grid">
+
+
+                        <a
+                            href="pages/assistant.html"
+                            class="quick-action glass"
+                        >
+
+                            <span class="quick-action-icon">
+                                ◉
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Falar com a SEXTA-FEIRA
+                                </strong>
+
+                                <span>
+                                    Abrir assistente
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="pages/agenda.html"
+                            class="quick-action glass"
+                        >
+
+                            <span class="quick-action-icon">
+                                ◫
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Abrir agenda
+                                </strong>
+
+                                <span>
+                                    Ver compromissos
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="pages/performance.html"
+                            class="quick-action glass"
+                        >
+
+                            <span class="quick-action-icon">
+                                ◌
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Ver desempenho
+                                </strong>
+
+                                <span>
+                                    Academia e evolução
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <a
+                            href="pages/projects.html"
+                            class="quick-action glass"
+                        >
+
+                            <span class="quick-action-icon">
+                                ◇
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Abrir projetos
+                                </strong>
+
+                                <span>
+                                    Projetos, estudos e metas
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     RODAPÉ DO PAINEL
+                ================================================== -->
+
+                <footer class="dashboard-footer">
+
+
+                    <div>
+
+                        <span class="system-dot"></span>
+
+                        <span>
+                            SISTEMA OPERACIONAL
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            MEMÓRIA
+                        </span>
+
+                        <strong>
+                            ATIVA
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            INSTÂNCIA
+                        </span>
+
+                        <strong>
+                            LOCAL
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            VERSÃO
+                        </span>
+
+                        <strong>
+                            1.0.0
+                        </strong>
+
+                    </div>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+ <script src="js/clock.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/assistant.js"></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

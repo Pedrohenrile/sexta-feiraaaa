@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ORION — Assistente</title>
+
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         CSS GLOBAL
+    ====================================================== -->
+
+
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <!-- =====================================================
+         CSS DA PÁGINA
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/assistant.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         APP
+    ====================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+       <!-- =========================================================
+     BARRA LATERAL
+========================================================= -->
+
+<aside class="sidebar">
+
+    <!-- IDENTIDADE -->
+    <div class="sidebar-brand">
+
+        <div class="brand-symbol">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="brand-information">
+
+            <h1>SEXTA-FEIRA</h1>
+
+            <span>
+                SISTEMA PESSOAL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATUS -->
+    <div class="sidebar-status">
+
+        <div class="status-indicator">
+
+            <span class="system-dot"></span>
+
+            <span>
+                SISTEMA ONLINE
+            </span>
+
+        </div>
+
+        <span class="status-description">
+            NÚCLEO OPERACIONAL
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO
+    ====================================================== -->
+
+    <nav class="navigation">
+
+
+        <!-- =================================================
+             CENTRAL
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                CENTRAL
+            </span>
+
+
+            <!-- CENTRAL DE COMANDO -->
+
+            <a
+                href="index.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Central de Comando
+                </span>
+
+            </a>
+
+
+            <!-- ASSISTENTE — PÁGINA ATUAL -->
+
+            <a
+                href="assistant.html"
+                class="navigation-item active"
+            >
+
+                <span class="navigation-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Assistente
+                </span>
+
+            </a>
+
+
+            <!-- AGENDA -->
+
+            <a
+                href="agenda.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◫
+                </span>
+
+                <span>
+                    Agenda
+                </span>
+
+            </a>
+
+
+            <!-- MEMÓRIA -->
+
+            <a
+                href="memory.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◎
+                </span>
+
+                <span>
+                    Memória
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESENVOLVIMENTO
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                DESENVOLVIMENTO
+            </span>
+
+
+            <!-- DESEMPENHO -->
+
+            <a
+                href="performance.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◌
+                </span>
+
+                <span>
+                    Desempenho
+                </span>
+
+            </a>
+
+
+            <!-- PROJETOS -->
+
+            <a
+                href="projects.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◇
+                </span>
+
+                <span>
+                    Projetos
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SISTEMA
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                SISTEMA
+            </span>
+
+
+            <!-- SEGURANÇA -->
+
+            <a
+                href="system.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ⛨
+                </span>
+
+                <span>
+                    Segurança
+                </span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         RODAPÉ DA BARRA
+    ====================================================== -->
+
+    <div class="sidebar-footer">
+
+        <div class="system-version">
+
+            <span>
+                INSTÂNCIA LOCAL
+            </span>
+
+            <strong>
+                ORION 1.0
+            </strong>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+        <!-- =================================================
+             CONTEÚDO PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="topbar">
+
+
+                <div class="topbar-left">
+
+                    <span class="topbar-path">
+                        ORION / ASSISTENTE
+                    </span>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <div class="topbar-status">
+
+                        <span class="topbar-status-dot"></span>
+
+                        <span>
+                            SISTEMA ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <span
+                        id="current-time"
+                        class="topbar-time"
+                    >
+                        00:00:00
+                    </span>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 INTERFACE DA SEXTA-FEIRA
+            ================================================== -->
+
+            <section class="assistant-interface">
+
+
+                <!-- =================================================
+                     CABEÇALHO
+                ================================================== -->
+
+                <header class="assistant-header">
+
+
+                    <div class="assistant-header-main">
+
+                        <span class="assistant-overline">
+                            INTELIGÊNCIA PESSOAL
+                        </span>
+
+                        <h1>
+                            SEXTA-FEIRA
+                        </h1>
+
+                        <p>
+                            Canal de comunicação pessoal
+                        </p>
+
+                    </div>
+
+
+                    <div class="assistant-system-state">
+
+                        <span class="assistant-state-dot"></span>
+
+                        <div class="assistant-state-text">
+
+                            <span>
+                                STATUS
+                            </span>
+
+                            <strong>
+                                ONLINE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </header>
+
+
+
+                <!-- =================================================
+                     PRESENÇA
+                ================================================== -->
+
+                <section class="assistant-presence">
+
+
+                    <!-- VÍDEO -->
+
+                    <div class="presence-video">
+
+                        <video
+                            class="assistant-face-video"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                        >
+
+                            <source
+                                src="iaiai.mp4"
+                                type="video/mp4"
+                            >
+
+                        </video>
+
+                    </div>
+
+
+                    <!-- CAMADA -->
+                    <div class="presence-overlay"></div>
+
+
+                    <!-- GRID -->
+                    <div class="presence-grid"></div>
+
+
+                    <!-- SCANNER -->
+                    <div class="presence-scan"></div>
+
+
+                    <!-- CANTOS HUD -->
+
+                    <span
+                        class="presence-hud hud-top-left"
+                    ></span>
+
+                    <span
+                        class="presence-hud hud-top-right"
+                    ></span>
+
+                    <span
+                        class="presence-hud hud-bottom-left"
+                    ></span>
+
+                    <span
+                        class="presence-hud hud-bottom-right"
+                    ></span>
+
+
+                    <!-- =================================================
+                         IDENTIDADE
+                    ================================================== -->
+
+                    <div class="presence-identity">
+
+
+                        <div class="presence-core">
+
+                            <div class="presence-core-ring ring-1"></div>
+
+                            <div class="presence-core-ring ring-2"></div>
+
+                            <div class="presence-core-center">
+                                ◈
+                            </div>
+
+                        </div>
+
+
+                        <div class="presence-title">
+
+                            <span>
+                                INTERFACE
+                            </span>
+
+                            <strong>
+                                SEXTA-FEIRA
+                            </strong>
+
+                            <small>
+                                ASSISTENTE PESSOAL
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- ESTADO -->
+
+                    <div class="presence-status">
+
+                        <span class="presence-status-dot"></span>
+
+                        <span>
+                            PRESENÇA ONLINE
+                        </span>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     ÁREA DE COMUNICAÇÃO
+                ================================================== -->
+
+                <section class="assistant-communication">
+
+
+                    <!-- =================================================
+                         HISTÓRICO
+                    ================================================== -->
+
+                    <aside class="assistant-history">
+
+
+                        <header class="assistant-history-header">
+
+                            <div>
+
+                                <span class="assistant-history-label">
+                                    ARQUIVO
+                                </span>
+
+                                <h2>
+                                    Conversas
+                                </h2>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="assistant-new-chat"
+                                data-new-chat
+                                aria-label="Nova conversa"
+                            >
+                                +
+                            </button>
+
+                        </header>
+
+
+                        <div
+                            class="assistant-history-list"
+                            data-assistant-history
+                        >
+
+                            <div class="assistant-history-empty">
+
+                                <span>
+                                    ◌
+                                </span>
+
+                                <p>
+                                    Nenhuma conversa arquivada.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <footer class="assistant-history-footer">
+
+                            <button
+    type="button"
+    class="assistant-history-action"
+    data-action="clear-conversation"
+>
+    <span>×</span>
+    <span>Limpar conversa</span>
+</button>
+
+<button
+    type="button"
+    class="assistant-history-action danger"
+    data-action="clear-all-history"
+>
+    <span>⌫</span>
+    <span>Limpar tudo</span>
+</button>
+
+                        </footer>
+
+
+                    </aside>
+
+
+
+                    <!-- =================================================
+                         CHAT
+                    ================================================== -->
+
+                    <section class="assistant-chat">
+
+
+                        <!-- CABEÇALHO DO CHAT -->
+
+                        <header class="assistant-chat-header">
+
+
+                            <div class="assistant-chat-identity">
+
+
+                                <div class="assistant-core-mini">
+
+                                    <span
+                                        class="assistant-core-ring ring-a"
+                                    ></span>
+
+                                    <span
+                                        class="assistant-core-ring ring-b"
+                                    ></span>
+
+                                    <span
+                                        class="assistant-core-center"
+                                    >
+                                        ◈
+                                    </span>
+
+                                </div>
+
+
+                                <div class="assistant-chat-title">
+
+                                    <span>
+                                        CANAL DE COMUNICAÇÃO
+                                    </span>
+
+                                    <strong>
+                                        SEXTA-FEIRA
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="assistant-context-status">
+
+                                <span class="context-indicator"></span>
+
+                                <span>
+                                    CONTEXTO ATIVO
+                                </span>
+
+                            </div>
+
+
+                        </header>
+
+
+
+                        <!-- MENSAGENS -->
+
+                        <div
+                            class="assistant-messages is-empty"
+                            data-assistant-conversation
+                        >
+
+                        </div>
+
+
+
+                        <!-- INPUT -->
+
+                        <footer class="assistant-input-container">
+
+
+                            <div class="assistant-input-glow"></div>
+
+
+                            <div class="assistant-input-wrapper">
+
+
+                                <textarea
+                                    class="assistant-input"
+                                    data-assistant-input
+                                    rows="1"
+                                    placeholder="Fale com a SEXTA-FEIRA..."
+                                    autocomplete="off"
+                                    spellcheck="true"
+                                ></textarea>
+
+
+                                <div class="assistant-input-controls">
+
+
+                                    <button
+                                        type="button"
+                                        class="assistant-microphone"
+                                        aria-label="Ativar microfone"
+                                    >
+                                        ◉
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        class="assistant-send"
+                                        data-assistant-send
+                                        aria-label="Enviar mensagem"
+                                    >
+                                        ↑
+                                    </button>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="assistant-input-footer">
+
+                                <span>
+                                    SEXTA-FEIRA
+                                </span>
+
+                                <span>
+                                    CONTEXTO ATIVO
+                                </span>
+
+                                <span>
+                                    ENTER PARA ENVIAR
+                                </span>
+
+                            </div>
+
+
+                        </footer>
+
+
+                    </section>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     RODAPÉ
+                ================================================== -->
+
+                <footer class="assistant-footer">
+
+
+                    <div class="assistant-footer-left">
+
+                        <span>
+                            ORION
+                        </span>
+
+                        <span>
+                            PERSONAL INTELLIGENCE
+                        </span>
+
+                    </div>
+
+
+                    <div class="assistant-footer-center">
+
+                        <span>
+                            SEXTA-FEIRA / CANAL PRINCIPAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="assistant-footer-right">
+
+                        <span class="footer-status">
+                            ● ONLINE
+                        </span>
+
+                    </div>
+
+
+                </footer>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+   
+    <script src="js/clock.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/assistant.js"></script>
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

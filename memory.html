@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ORION — Memory Core</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS GLOBAL -->
+     <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- CSS DA PÁGINA -->
+    <link rel="stylesheet" href="css/memory.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         AMBIENTE DO SISTEMA
+    ========================================================== -->
+
+    <div class="system-background">
+
+        <div class="ambient-light ambient-light-one"></div>
+        <div class="ambient-light ambient-light-two"></div>
+
+        <div class="tech-grid"></div>
+
+        <div class="scanline"></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         APLICAÇÃO
+    ========================================================== -->
+
+    <div class="app">
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+       <!-- =========================================================
+     BARRA LATERAL
+========================================================= -->
+
+<aside class="sidebar">
+
+    <!-- IDENTIDADE -->
+    <div class="sidebar-brand">
+
+        <div class="brand-symbol">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="brand-information">
+
+            <h1>SEXTA-FEIRA</h1>
+
+            <span>
+                SISTEMA PESSOAL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATUS -->
+    <div class="sidebar-status">
+
+        <div class="status-indicator">
+
+            <span class="system-dot"></span>
+
+            <span>
+                SISTEMA ONLINE
+            </span>
+
+        </div>
+
+        <span class="status-description">
+            NÚCLEO OPERACIONAL
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO
+    ====================================================== -->
+
+    <nav class="navigation">
+
+
+        <!-- =================================================
+             CENTRAL
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                CENTRAL
+            </span>
+
+
+            <!-- CENTRAL DE COMANDO -->
+
+            <a
+                href="index.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Central de Comando
+                </span>
+
+            </a>
+
+
+            <!-- ASSISTENTE — PÁGINA ATUAL -->
+
+            <a
+                href="assistant.html"
+                class="navigation-item active"
+            >
+
+                <span class="navigation-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Assistente
+                </span>
+
+            </a>
+
+
+            <!-- AGENDA -->
+
+            <a
+                href="agenda.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◫
+                </span>
+
+                <span>
+                    Agenda
+                </span>
+
+            </a>
+
+
+            <!-- MEMÓRIA -->
+
+            <a
+                href="memory.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◎
+                </span>
+
+                <span>
+                    Memória
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESENVOLVIMENTO
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                DESENVOLVIMENTO
+            </span>
+
+
+            <!-- DESEMPENHO -->
+
+            <a
+                href="performance.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◌
+                </span>
+
+                <span>
+                    Desempenho
+                </span>
+
+            </a>
+
+
+            <!-- PROJETOS -->
+
+            <a
+                href="projects.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◇
+                </span>
+
+                <span>
+                    Projetos
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SISTEMA
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                SISTEMA
+            </span>
+
+
+            <!-- SEGURANÇA -->
+
+            <a
+                href="system.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ⛨
+                </span>
+
+                <span>
+                    Segurança
+                </span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         RODAPÉ DA BARRA
+    ====================================================== -->
+
+    <div class="sidebar-footer">
+
+        <div class="system-version">
+
+            <span>
+                INSTÂNCIA LOCAL
+            </span>
+
+            <strong>
+                ORION 1.0
+            </strong>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+        <!-- =====================================================
+             CONTEÚDO PRINCIPAL
+        ====================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <span class="breadcrumb-main">
+                        ORION
+                    </span>
+
+                    <span class="breadcrumb-separator">
+                        /
+                    </span>
+
+                    <span class="breadcrumb-current">
+                        MEMORY CORE
+                    </span>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="connection-status">
+
+                        <span class="system-dot online"></span>
+
+                        <span>
+                            CONEXÃO SEGURA
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="system-time"
+                        id="current-time"
+                    >
+                        --:--:--
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PÁGINA
+            ================================================== -->
+
+            <section class="memory-page">
+
+
+                <!-- =================================================
+                     CABEÇALHO
+                ================================================== -->
+
+                <section class="memory-command-core">
+
+    <div class="memory-core-video" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="auto">
+            <source src="memoria.mp4" type="video/mp4">
+        </video>
+        <div class="memory-core-video-overlay"></div>
+    </div>
+
+    <div class="memory-core-grid" aria-hidden="true"></div>
+    <div class="memory-core-scan" aria-hidden="true"></div>
+
+    <div class="memory-core-info">
+        <span class="memory-core-label">SEXTA-FEIRA // MEMORY CORE</span>
+        <h1>MEMÓRIA <span>ONLINE</span></h1>
+        <p>Seu núcleo de memória contextual está operacional.</p>
+
+        <div class="memory-core-data">
+            <div><small>ESTADO</small><strong>ATIVO</strong></div>
+            <div><small>CONTEXTO</small><strong>DISPONÍVEL</strong></div>
+            <div><small>NÚCLEO</small><strong>OPERACIONAL</strong></div>
+        </div>
+    </div>
+
+    <div class="memory-core-status">
+        <span class="system-dot online"></span>
+        <div><small>MEMORY SYSTEM</small><strong>ONLINE</strong></div>
+    </div>
+
+    <div class="memory-core-marker marker-left"><i></i><span>CONTEXT ENGINE</span></div>
+    <div class="memory-core-marker marker-right"><span>MEMORY DATABASE</span><i></i></div>
+
+</section>
+
+                <!-- =================================================
+                     RESUMO DA MEMÓRIA
+                ================================================== -->
+
+                <section class="memory-overview">
+
+
+                    <article class="memory-stat-card">
+
+                        <div class="memory-stat-icon">
+                            ◈
+                        </div>
+
+                        <div class="memory-stat-content">
+
+                            <span>
+                                REGISTROS
+                            </span>
+
+                            <strong data-memory-count>
+                                128
+                            </strong>
+
+                            <small>
+                                informações armazenadas
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="memory-stat-card">
+
+                        <div class="memory-stat-icon">
+                            ◎
+                        </div>
+
+                        <div class="memory-stat-content">
+
+                            <span>
+                                IMPORTANTES
+                            </span>
+
+                            <strong>
+                                12
+                            </strong>
+
+                            <small>
+                                alta prioridade
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="memory-stat-card">
+
+                        <div class="memory-stat-icon">
+                            ◇
+                        </div>
+
+                        <div class="memory-stat-content">
+
+                            <span>
+                                CATEGORIAS
+                            </span>
+
+                            <strong>
+                                08
+                            </strong>
+
+                            <small>
+                                áreas organizadas
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="memory-stat-card">
+
+                        <div class="memory-stat-icon">
+                            ↻
+                        </div>
+
+                        <div class="memory-stat-content">
+
+                            <span>
+                                ATUALIZAÇÃO
+                            </span>
+
+                            <strong>
+                                HOJE
+                            </strong>
+
+                            <small>
+                                memória sincronizada
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     BARRA DE PESQUISA
+                ================================================== -->
+
+                <section class="memory-search-panel panel">
+
+                    <div class="memory-search">
+
+                        <span class="memory-search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="memory-search"
+                            data-memory-search
+                            placeholder="Pesquisar na memória..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="memory-filter">
+
+                        <select data-memory-filter>
+
+                            <option value="all">
+                                Todas as categorias
+                            </option>
+
+                            <option value="personal">
+                                Sobre mim
+                            </option>
+
+                            <option value="goals">
+                                Objetivos
+                            </option>
+
+                            <option value="projects">
+                                Projetos
+                            </option>
+
+                            <option value="studies">
+                                Estudos
+                            </option>
+
+                            <option value="training">
+                                Academia
+                            </option>
+
+                            <option value="finance">
+                                Finanças
+                            </option>
+
+                            <option value="ideas">
+                                Ideias
+                            </option>
+
+                            <option value="important">
+                                Importantes
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     CONTEÚDO PRINCIPAL
+                ================================================== -->
+
+                <div class="memory-layout">
+
+
+                    <!-- =============================================
+                         COLUNA PRINCIPAL
+                    ============================================== -->
+
+                    <div class="memory-main-column">
+
+
+                        <!-- =========================================
+                             MEMÓRIAS IMPORTANTES
+                        ========================================== -->
+
+                        <section class="panel memory-section">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        PRIORIDADE
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Memórias importantes
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    class="button button-secondary"
+                                    data-action="memory-add"
+                                >
+                                    + NOVA MEMÓRIA
+                                </button>
+
+                            </div>
+
+
+                            <div class="important-memory-list">
+
+
+                                <article
+                                    class="important-memory"
+                                    data-memory-category="personal"
+                                >
+
+                                    <div class="memory-priority">
+                                        !
+                                    </div>
+
+                                    <div class="memory-item-content">
+
+                                        <div class="memory-item-top">
+
+                                            <span class="memory-category">
+                                                SOBRE MIM
+                                            </span>
+
+                                            <span class="memory-date">
+                                                Atualizado hoje
+                                            </span>
+
+                                        </div>
+
+                                        <h3>
+                                            Perfil pessoal
+                                        </h3>
+
+                                        <p>
+                                            Informações importantes sobre o usuário
+                                            que ajudam a SEXTA-FEIRA a compreender
+                                            seu contexto.
+                                        </p>
+
+                                    </div>
+
+                                    <button
+                                        class="icon-button"
+                                        aria-label="Abrir memória"
+                                    >
+                                        →
+                                    </button>
+
+                                </article>
+
+
+
+                                <article
+                                    class="important-memory"
+                                    data-memory-category="goals"
+                                >
+
+                                    <div class="memory-priority">
+                                        !
+                                    </div>
+
+                                    <div class="memory-item-content">
+
+                                        <div class="memory-item-top">
+
+                                            <span class="memory-category">
+                                                OBJETIVOS
+                                            </span>
+
+                                            <span class="memory-date">
+                                                Atualizado recentemente
+                                            </span>
+
+                                        </div>
+
+                                        <h3>
+                                            Objetivos de longo prazo
+                                        </h3>
+
+                                        <p>
+                                            Metas que devem permanecer no contexto
+                                            da SEXTA-FEIRA para orientar decisões
+                                            futuras.
+                                        </p>
+
+                                    </div>
+
+                                    <button
+                                        class="icon-button"
+                                        aria-label="Abrir memória"
+                                    >
+                                        →
+                                    </button>
+
+                                </article>
+
+
+
+                                <article
+                                    class="important-memory"
+                                    data-memory-category="projects"
+                                >
+
+                                    <div class="memory-priority">
+                                        !
+                                    </div>
+
+                                    <div class="memory-item-content">
+
+                                        <div class="memory-item-top">
+
+                                            <span class="memory-category">
+                                                PROJETO
+                                            </span>
+
+                                            <span class="memory-date">
+                                                Atualizado recentemente
+                                            </span>
+
+                                        </div>
+
+                                        <h3>
+                                            Projeto ORION
+                                        </h3>
+
+                                        <p>
+                                            Desenvolvimento do sistema pessoal,
+                                            incluindo assistente, memória,
+                                            agenda, automações e inteligência.
+                                        </p>
+
+                                    </div>
+
+                                    <button
+                                        class="icon-button"
+                                        aria-label="Abrir memória"
+                                    >
+                                        →
+                                    </button>
+
+                                </article>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =========================================
+                             SOBRE MIM
+                        ========================================== -->
+
+                        <section class="panel memory-section">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        IDENTIDADE
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Sobre mim
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    class="icon-button"
+                                    data-action="memory-edit-profile"
+                                    aria-label="Editar perfil"
+                                >
+                                    ✎
+                                </button>
+
+                            </div>
+
+
+                            <div class="profile-memory-grid">
+
+                                <div class="profile-memory-item">
+
+                                    <span>
+                                        PERFIL
+                                    </span>
+
+                                    <strong>
+                                        Usuário principal
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="profile-memory-item">
+
+                                    <span>
+                                        SISTEMA
+                                    </span>
+
+                                    <strong>
+                                        ORION
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="profile-memory-item">
+
+                                    <span>
+                                        ASSISTENTE
+                                    </span>
+
+                                    <strong>
+                                        SEXTA-FEIRA
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="profile-memory-item">
+
+                                    <span>
+                                        IDIOMA
+                                    </span>
+
+                                    <strong>
+                                        Português — Brasil
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =========================================
+                             PREFERÊNCIAS
+                        ========================================== -->
+
+                        <section class="panel memory-section">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        COMPORTAMENTO
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Preferências conhecidas
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="preference-list">
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        ◉
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Comunicação
+                                        </strong>
+
+                                        <span>
+                                            Respostas objetivas e diretas quando necessário.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        ◇
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Organização
+                                        </strong>
+
+                                        <span>
+                                            Sistema dividido em módulos e informações organizadas.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        ◎
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Inteligência crítica
+                                        </strong>
+
+                                        <span>
+                                            A SEXTA-FEIRA deve discordar quando identificar uma decisão ruim.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        ⬡
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Interface
+                                        </strong>
+
+                                        <span>
+                                            Visual tecnológico, limpo e futurista.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =========================================
+                             IDEIAS
+                        ========================================== -->
+
+                        <section class="panel memory-section">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        BANCO DE IDEIAS
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Ideias armazenadas
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    class="button button-secondary"
+                                    data-action="memory-add-idea"
+                                >
+                                    + ADICIONAR
+                                </button>
+
+                            </div>
+
+
+                            <div class="idea-memory-list">
+
+
+                                <div class="idea-memory-item">
+
+                                    <div class="idea-symbol">
+                                        ✦
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Evoluir a SEXTA-FEIRA
+                                        </strong>
+
+                                        <span>
+                                            Transformar o assistente em uma inteligência
+                                            pessoal integrada ao sistema.
+                                        </span>
+
+                                    </div>
+
+                                    <span class="memory-tag">
+                                        FUTURO
+                                    </span>
+
+                                </div>
+
+
+                                <div class="idea-memory-item">
+
+                                    <div class="idea-symbol">
+                                        ✦
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Sistema de automações
+                                        </strong>
+
+                                        <span>
+                                            Criar regras para que o sistema tome
+                                            determinadas ações automaticamente.
+                                        </span>
+
+                                    </div>
+
+                                    <span class="memory-tag">
+                                        AUTOMAÇÃO
+                                    </span>
+
+                                </div>
+
+
+                                <div class="idea-memory-item">
+
+                                    <div class="idea-symbol">
+                                        ✦
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Visão computacional
+                                        </strong>
+
+                                        <span>
+                                            Permitir que a SEXTA-FEIRA compreenda
+                                            imagens, telas e informações visuais.
+                                        </span>
+
+                                    </div>
+
+                                    <span class="memory-tag">
+                                        IA
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+
+
+                    <!-- =============================================
+                         COLUNA LATERAL
+                    ============================================== -->
+
+                    <aside class="memory-side-column">
+
+
+                        <!-- =========================================
+                             NÚCLEO DE MEMÓRIA
+                        ========================================== -->
+
+                        <section class="panel memory-core-panel">
+
+                            <div class="memory-core-visual">
+
+                                <div class="memory-core-ring ring-one"></div>
+                                <div class="memory-core-ring ring-two"></div>
+                                <div class="memory-core-ring ring-three"></div>
+
+                                <div class="memory-core-center">
+                                    SF
+                                </div>
+
+                            </div>
+
+
+                            <div class="memory-core-information">
+
+                                <span class="section-label">
+                                    MEMORY CORE
+                                </span>
+
+                                <h2>
+                                    SEXTA-FEIRA
+                                </h2>
+
+                                <p>
+                                    Memória contextual ativa.
+                                </p>
+
+                                <div class="memory-core-status">
+
+                                    <span class="system-dot online"></span>
+
+                                    <span>
+                                        OPERACIONAL
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =========================================
+                             CATEGORIAS
+                        ========================================== -->
+
+                        <section class="panel memory-categories">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        ORGANIZAÇÃO
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Categorias
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="category-list">
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="personal"
+                                >
+                                    <span class="category-icon">
+                                        ◉
+                                    </span>
+
+                                    <span>
+                                        Sobre mim
+                                    </span>
+
+                                    <strong>
+                                        18
+                                    </strong>
+                                </button>
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="goals"
+                                >
+                                    <span class="category-icon">
+                                        ◎
+                                    </span>
+
+                                    <span>
+                                        Objetivos
+                                    </span>
+
+                                    <strong>
+                                        14
+                                    </strong>
+                                </button>
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="projects"
+                                >
+                                    <span class="category-icon">
+                                        ◇
+                                    </span>
+
+                                    <span>
+                                        Projetos
+                                    </span>
+
+                                    <strong>
+                                        21
+                                    </strong>
+                                </button>
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="studies"
+                                >
+                                    <span class="category-icon">
+                                        ▣
+                                    </span>
+
+                                    <span>
+                                        Estudos
+                                    </span>
+
+                                    <strong>
+                                        17
+                                    </strong>
+                                </button>
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="training"
+                                >
+                                    <span class="category-icon">
+                                        ◒
+                                    </span>
+
+                                    <span>
+                                        Academia
+                                    </span>
+
+                                    <strong>
+                                        16
+                                    </strong>
+                                </button>
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="finance"
+                                >
+                                    <span class="category-icon">
+                                        ◈
+                                    </span>
+
+                                    <span>
+                                        Finanças
+                                    </span>
+
+                                    <strong>
+                                        09
+                                    </strong>
+                                </button>
+
+
+                                <button
+                                    class="category-item"
+                                    data-memory-category-filter="ideas"
+                                >
+                                    <span class="category-icon">
+                                        ✦
+                                    </span>
+
+                                    <span>
+                                        Ideias
+                                    </span>
+
+                                    <strong>
+                                        23
+                                    </strong>
+                                </button>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =========================================
+                             ATIVIDADE
+                        ========================================== -->
+
+                        <section class="panel memory-activity">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        REGISTRO
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Atividade recente
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="memory-activity-list">
+
+
+                                <div class="memory-activity-item">
+
+                                    <span class="activity-line"></span>
+
+                                    <div>
+
+                                        <strong>
+                                            Memória atualizada
+                                        </strong>
+
+                                        <span>
+                                            Hoje • 14:02
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="memory-activity-item">
+
+                                    <span class="activity-line"></span>
+
+                                    <div>
+
+                                        <strong>
+                                            Nova ideia registrada
+                                        </strong>
+
+                                        <span>
+                                            Ontem • 21:18
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="memory-activity-item">
+
+                                    <span class="activity-line"></span>
+
+                                    <div>
+
+                                        <strong>
+                                            Objetivo sincronizado
+                                        </strong>
+
+                                        <span>
+                                            Ontem • 18:40
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =========================================
+                             INTELIGÊNCIA DA MEMÓRIA
+                        ========================================== -->
+
+                        <section class="panel memory-intelligence">
+
+                            <div class="intelligence-header">
+
+                                <div class="intelligence-icon">
+                                    SF
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        SEXTA-FEIRA
+                                    </span>
+
+                                    <strong>
+                                        Inteligência contextual
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <p>
+                                A memória permite conectar informações
+                                diferentes para compreender melhor o contexto
+                                das suas decisões.
+                            </p>
+
+
+                            <div class="intelligence-status">
+
+                                <span class="system-dot online"></span>
+
+                                <span>
+                                    CONTEXTO DISPONÍVEL
+                                </span>
+
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RODAPÉ
+                ================================================== -->
+
+                <footer class="memory-footer">
+
+                    <div>
+
+                        <span class="system-dot online"></span>
+
+                        <span>
+                            MEMORY CORE OPERACIONAL
+                        </span>
+
+                    </div>
+
+                    <span>
+                        ORION • SEXTA-FEIRA • MEMÓRIA CONTEXTUAL
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         NOTIFICAÇÕES
+    ========================================================== -->
+
+    <div
+        class="system-notifications"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+     <script src="js/clock.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/assistant.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/memory.js"></script>
+ 
+
+</body>
+
+</html>

@@ -1,0 +1,1074 @@
+/* =========================================================
+   ORION — ANIMAÇÕES
+   Movimento e comportamento visual do sistema
+========================================================= */
+
+
+/* =========================================================
+   01. ENTRADA GERAL
+========================================================= */
+
+@keyframes system-entry {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.system-entry {
+    animation:
+        system-entry 700ms var(--transition-smooth) both;
+}
+
+
+/* =========================================================
+   02. APARECIMENTO SUAVE
+========================================================= */
+
+@keyframes fade-in {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.fade-in {
+    animation:
+        fade-in 500ms ease both;
+}
+
+
+/* =========================================================
+   03. SUBIDA SUAVE
+========================================================= */
+
+@keyframes slide-up {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.slide-up {
+    animation:
+        slide-up 600ms var(--transition-smooth) both;
+}
+
+
+/* =========================================================
+   04. DESLIZAMENTO DA ESQUERDA
+========================================================= */
+
+@keyframes slide-right {
+
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+.slide-right {
+    animation:
+        slide-right 600ms var(--transition-smooth) both;
+}
+
+
+/* =========================================================
+   05. PULSO DO SISTEMA
+========================================================= */
+
+@keyframes system-pulse {
+
+    0% {
+        opacity: 0.55;
+        box-shadow:
+            0 0 0 rgba(159, 230, 192, 0);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 14px rgba(159, 230, 192, 0.25);
+    }
+
+    100% {
+        opacity: 0.55;
+        box-shadow:
+            0 0 0 rgba(159, 230, 192, 0);
+    }
+
+}
+
+.system-dot {
+    animation:
+        system-pulse 2.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   06. NÚCLEO DA SEXTA-FEIRA
+========================================================= */
+
+@keyframes core-pulse {
+
+    0% {
+        transform: scale(0.92);
+
+        opacity: 0.55;
+
+        box-shadow:
+            0 0 15px rgba(185, 220, 255, 0.12),
+            0 0 30px rgba(185, 220, 255, 0.05);
+    }
+
+    50% {
+        transform: scale(1);
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 25px rgba(185, 220, 255, 0.28),
+            0 0 60px rgba(185, 220, 255, 0.10);
+    }
+
+    100% {
+        transform: scale(0.92);
+
+        opacity: 0.55;
+
+        box-shadow:
+            0 0 15px rgba(185, 220, 255, 0.12),
+            0 0 30px rgba(185, 220, 255, 0.05);
+    }
+
+}
+
+.core-center {
+    animation:
+        core-pulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   07. ROTAÇÃO DOS ANÉIS
+========================================================= */
+
+@keyframes rotate-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+@keyframes rotate-counter-clockwise {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+.ring-one {
+    animation:
+        rotate-clockwise 18s linear infinite;
+}
+
+.ring-two {
+    animation:
+        rotate-counter-clockwise 25s linear infinite;
+}
+
+.ring-three {
+    animation:
+        rotate-clockwise 35s linear infinite;
+}
+
+
+/* =========================================================
+   08. VARREDURA HORIZONTAL
+========================================================= */
+
+@keyframes scan {
+
+    0% {
+        transform: translateY(-100vh);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(100vh);
+
+        opacity: 0;
+    }
+
+}
+
+.scanline {
+    animation:
+        scan 12s linear infinite;
+}
+
+
+/* =========================================================
+   09. MOVIMENTO DA LUZ AMBIENTAL
+========================================================= */
+
+@keyframes ambient-drift-one {
+
+    0% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(80px, 40px)
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+}
+
+@keyframes ambient-drift-two {
+
+    0% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-60px, -30px)
+            scale(1.06);
+    }
+
+    100% {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+}
+
+.ambient-light-one {
+    animation:
+        ambient-drift-one 14s ease-in-out infinite;
+}
+
+.ambient-light-two {
+    animation:
+        ambient-drift-two 18s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   10. BRILHO DE INTERFACE
+========================================================= */
+
+@keyframes subtle-glow {
+
+    0% {
+        box-shadow:
+            0 0 0 rgba(185, 220, 255, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px rgba(185, 220, 255, 0.05);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 rgba(185, 220, 255, 0);
+    }
+
+}
+
+.glow-animation {
+    animation:
+        subtle-glow 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   11. PULSO DE BORDA
+========================================================= */
+
+@keyframes border-pulse {
+
+    0% {
+        border-color:
+            var(--color-border);
+    }
+
+    50% {
+        border-color:
+            rgba(185, 220, 255, 0.16);
+    }
+
+    100% {
+        border-color:
+            var(--color-border);
+    }
+
+}
+
+.border-pulse {
+    animation:
+        border-pulse 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   12. TEXTO DIGITANDO
+========================================================= */
+
+@keyframes typing-cursor {
+
+    0%,
+    49% {
+        border-right-color:
+            var(--color-accent);
+    }
+
+    50%,
+    100% {
+        border-right-color:
+            transparent;
+    }
+
+}
+
+.typing {
+    border-right:
+        1px solid var(--color-accent);
+
+    animation:
+        typing-cursor 900ms steps(1) infinite;
+}
+
+
+/* =========================================================
+   13. PULSO DE ALERTA
+========================================================= */
+
+@keyframes alert-pulse {
+
+    0% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 15px rgba(232, 201, 137, 0.12);
+    }
+
+    100% {
+        opacity: 0.75;
+    }
+
+}
+
+.alert-pulse {
+    animation:
+        alert-pulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   14. ENTRADA ESCALONADA
+========================================================= */
+
+.stagger > * {
+    opacity: 0;
+
+    animation:
+        slide-up 600ms var(--transition-smooth) forwards;
+}
+
+.stagger > *:nth-child(1) {
+    animation-delay: 50ms;
+}
+
+.stagger > *:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.stagger > *:nth-child(3) {
+    animation-delay: 150ms;
+}
+
+.stagger > *:nth-child(4) {
+    animation-delay: 200ms;
+}
+
+.stagger > *:nth-child(5) {
+    animation-delay: 250ms;
+}
+
+.stagger > *:nth-child(6) {
+    animation-delay: 300ms;
+}
+
+.stagger > *:nth-child(7) {
+    animation-delay: 350ms;
+}
+
+.stagger > *:nth-child(8) {
+    animation-delay: 400ms;
+}
+
+
+/* =========================================================
+   15. HOVER TECNOLÓGICO
+========================================================= */
+
+.tech-hover {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.tech-hover::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 220, 255, 0.04),
+            transparent
+        );
+
+    transition:
+        left 600ms ease;
+
+    pointer-events: none;
+}
+
+.tech-hover:hover::before {
+    left: 100%;
+}
+
+
+/* =========================================================
+   16. PULSO DE NÚCLEO
+========================================================= */
+
+@keyframes core-wave {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.7);
+
+        opacity: 0.5;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.5);
+
+        opacity: 0;
+    }
+
+}
+
+.core-ring::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    border:
+        1px solid rgba(185, 220, 255, 0.15);
+
+    border-radius: 50%;
+
+    animation:
+        core-wave 3s ease-out infinite;
+}
+
+
+/* =========================================================
+   17. REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+
+
+/* =========================================================
+   PERFORMANCE — HOLOGRAMA BIOMÉTRICO
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01. RESPIRAÇÃO DO HOLOGRAMA
+   --------------------------------------------------------- */
+
+@keyframes biometricBreathing {
+
+    0%,
+    100% {
+        opacity: 0.78;
+        filter:
+            drop-shadow(0 0 8px rgba(185, 220, 255, 0.20))
+            drop-shadow(0 0 20px rgba(185, 220, 255, 0.08));
+    }
+
+    50% {
+        opacity: 1;
+        filter:
+            drop-shadow(0 0 14px rgba(185, 220, 255, 0.38))
+            drop-shadow(0 0 40px rgba(185, 220, 255, 0.16));
+    }
+}
+
+.biometric-body {
+    animation: biometricBreathing 4s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   02. SCANNER VERTICAL
+   --------------------------------------------------------- */
+
+@keyframes biometricScan {
+
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    92% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.biometric-scan-line {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 0;
+
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(185, 220, 255, 0.25),
+        rgba(237, 247, 255, 0.95),
+        rgba(185, 220, 255, 0.25),
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(185, 220, 255, 0.7),
+        0 0 22px rgba(185, 220, 255, 0.35);
+
+    pointer-events: none;
+
+    animation: biometricScan 3.8s linear infinite;
+}
+
+
+/* ---------------------------------------------------------
+   03. ANÉIS HOLOGRÁFICOS
+   --------------------------------------------------------- */
+
+@keyframes hologramRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hologramRingReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.hologram-ring {
+    position: absolute;
+    inset: 8%;
+
+    border: 1px solid rgba(185, 220, 255, 0.16);
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation:
+        hologramRing 24s linear infinite;
+}
+
+.hologram-ring:nth-child(2) {
+    inset: 15%;
+    border-style: dashed;
+    opacity: 0.7;
+
+    animation:
+        hologramRingReverse 17s linear infinite;
+}
+
+.hologram-ring:nth-child(3) {
+    inset: 24%;
+    border-color: rgba(185, 220, 255, 0.10);
+
+    animation:
+        hologramRing 31s linear infinite;
+}
+
+
+/* ---------------------------------------------------------
+   04. PULSO DOS PONTOS BIOMÉTRICOS
+   --------------------------------------------------------- */
+
+@keyframes biometricPoint {
+
+    0%,
+    100% {
+        transform: scale(0.85);
+        opacity: 0.45;
+        box-shadow:
+            0 0 0 0 rgba(185, 220, 255, 0);
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+        box-shadow:
+            0 0 0 6px rgba(185, 220, 255, 0.05),
+            0 0 18px rgba(185, 220, 255, 0.5);
+    }
+}
+
+.biometric-point {
+    animation: biometricPoint 2.2s ease-in-out infinite;
+}
+
+.biometric-point:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.biometric-point:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.biometric-point:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.biometric-point:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+
+/* ---------------------------------------------------------
+   05. MÚSCULO SELECIONADO
+   --------------------------------------------------------- */
+
+@keyframes muscleFocus {
+
+    0%,
+    100% {
+        opacity: 0.65;
+        filter:
+            drop-shadow(0 0 4px rgba(185, 220, 255, 0.15));
+    }
+
+    50% {
+        opacity: 1;
+        filter:
+            drop-shadow(0 0 10px rgba(185, 220, 255, 0.55))
+            drop-shadow(0 0 24px rgba(185, 220, 255, 0.25));
+    }
+}
+
+.muscle-zone.is-selected {
+    animation: muscleFocus 1.8s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   06. CALLOUTS / PAINÉIS LIGADOS AO CORPO
+   --------------------------------------------------------- */
+
+@keyframes calloutPulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.biometric-callout {
+    animation: calloutPulse 3s ease-in-out infinite;
+}
+
+.biometric-callout::before {
+    animation: calloutPulse 2s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   07. ENTRADA DOS PAINÉIS
+   --------------------------------------------------------- */
+
+@keyframes performancePanelEntry {
+
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.performance-panel {
+    animation: performancePanelEntry 0.7s ease-out both;
+}
+
+.performance-panel:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+.performance-panel:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+.performance-panel:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.performance-panel:nth-child(4) {
+    animation-delay: 0.32s;
+}
+
+
+/* ---------------------------------------------------------
+   08. BRILHO PASSANDO NAS BARRAS
+   --------------------------------------------------------- */
+
+@keyframes progressScan {
+
+    from {
+        transform: translateX(-140%);
+    }
+
+    to {
+        transform: translateX(140%);
+    }
+}
+
+.progress-fill {
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 35%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.32),
+        transparent
+    );
+
+    animation: progressScan 2.8s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   09. TREINO DE HOJE
+   --------------------------------------------------------- */
+
+@keyframes trainingSignal {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(185, 220, 255, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 5px rgba(185, 220, 255, 0.035),
+            0 0 22px rgba(185, 220, 255, 0.10);
+    }
+}
+
+.training-today {
+    animation: trainingSignal 2.5s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   10. INDICADOR DE SISTEMA
+   --------------------------------------------------------- */
+
+@keyframes systemDataPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.biometric-status {
+    animation: systemDataPulse 1.8s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   11. PARTÍCULAS HOLOGRÁFICAS
+   --------------------------------------------------------- */
+
+@keyframes hologramParticle {
+
+    0% {
+        transform:
+            translate3d(0, 20px, 0)
+            scale(0.6);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    85% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform:
+            translate3d(0, -120px, 0)
+            scale(1);
+
+        opacity: 0;
+    }
+}
+
+.hologram-particle {
+    animation:
+        hologramParticle 5s linear infinite;
+}
+
+.hologram-particle:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.hologram-particle:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.hologram-particle:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.hologram-particle:nth-child(5) {
+    animation-delay: 4s;
+}
+
+
+/* ---------------------------------------------------------
+   12. TEXTO "SCANNING"
+   --------------------------------------------------------- */
+
+@keyframes scanningText {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        letter-spacing: 0.16em;
+    }
+
+    50% {
+        opacity: 1;
+        letter-spacing: 0.22em;
+    }
+}
+
+.biometric-scanning-text {
+    animation: scanningText 2s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   13. CURSOR / DADOS EM ANÁLISE
+   --------------------------------------------------------- */
+
+@keyframes dataBlink {
+
+    0%,
+    45% {
+        opacity: 1;
+    }
+
+    46%,
+    100% {
+        opacity: 0.2;
+    }
+}
+
+.data-live {
+    animation: dataBlink 1.4s steps(1) infinite;
+}
+
+
+/* ---------------------------------------------------------
+   14. REDUÇÃO DE MOVIMENTO
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .biometric-body,
+    .biometric-scan-line,
+    .hologram-ring,
+    .biometric-point,
+    .muscle-zone.is-selected,
+    .biometric-callout,
+    .performance-panel,
+    .progress-fill::after,
+    .training-today,
+    .biometric-status,
+    .hologram-particle,
+    .biometric-scanning-text,
+    .data-live {
+        animation: none !important;
+    }
+}

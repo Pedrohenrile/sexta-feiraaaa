@@ -1,0 +1,1940 @@
+/* =========================================================
+   ORION — DASHBOARD
+   Central de Comando
+========================================================= */
+
+
+/* =========================================================
+   01. DASHBOARD BASE
+========================================================= */
+
+.dashboard {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: var(--space-10);
+}
+
+
+/* =========================================================
+   02. CABEÇALHO
+========================================================= */
+
+.dashboard-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+    animation: slide-up 0.6s var(--transition-smooth) both;
+}
+
+.dashboard-heading {
+    max-width: 760px;
+}
+
+.dashboard-heading .section-label {
+    margin-bottom: var(--space-3);
+}
+
+.dashboard-heading h1 {
+    font-size: clamp(
+        var(--font-size-2xl),
+        3vw,
+        var(--font-size-3xl)
+    );
+    line-height: 1.15;
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+}
+
+.dashboard-heading p {
+    max-width: 650px;
+    font-size: var(--font-size-md);
+}
+
+.dashboard-date {
+    min-width: 190px;
+    padding: var(--space-4) var(--space-5);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+
+    text-align: right;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.005)
+        );
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-small);
+}
+
+.dashboard-date #current-day {
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.dashboard-date #current-date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   03. PAINEL DE BOAS-VINDAS
+========================================================= */
+
+.welcome-panel {
+    position: relative;
+    min-height: 300px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+
+    overflow: hidden;
+
+    margin-bottom: var(--space-6);
+    padding: var(--space-8);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(185, 220, 255, 0.055),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.005)
+        );
+
+    box-shadow:
+        var(--shadow-medium),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+    animation: slide-up 0.7s var(--transition-smooth) 0.05s both;
+}
+
+.welcome-panel::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(185, 220, 255, 0.025) 50%,
+            transparent 100%
+        );
+
+    opacity: 0.7;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 650px;
+}
+
+.welcome-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    margin-bottom: var(--space-5);
+
+    color: var(--color-online);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.welcome-content h2 {
+    font-size: clamp(
+        var(--font-size-xl),
+        3vw,
+        var(--font-size-2xl)
+    );
+
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+}
+
+.welcome-content p {
+    max-width: 560px;
+    margin-bottom: var(--space-6);
+}
+
+.welcome-content .button {
+    align-self: flex-start;
+}
+
+
+/* =========================================================
+   04. NÚCLEO DA SEXTA-FEIRA
+========================================================= */
+
+.core-orb {
+    position: relative;
+
+    width: 260px;
+    height: 260px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.core-orb::before {
+    content: "";
+
+    position: absolute;
+    inset: 25%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(185, 220, 255, 0.18),
+            rgba(185, 220, 255, 0.04) 45%,
+            transparent 70%
+        );
+
+    filter: blur(12px);
+
+    animation: subtle-glow 3s ease-in-out infinite;
+}
+
+.core-ring {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+    border: 1px solid rgba(185, 220, 255, 0.16);
+
+    pointer-events: none;
+}
+
+.ring-one {
+    width: 120px;
+    height: 120px;
+}
+
+.ring-two {
+    width: 180px;
+    height: 180px;
+
+    border-style: dashed;
+    border-color: rgba(185, 220, 255, 0.10);
+}
+
+.ring-three {
+    width: 240px;
+    height: 240px;
+
+    border-color: rgba(185, 220, 255, 0.055);
+}
+
+.core-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 74px;
+    height: 74px;
+
+    margin-left: -37px;
+    margin-top: -37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            var(--color-accent-bright),
+            var(--color-accent) 30%,
+            #7ca8cc 55%,
+            #3f6079 100%
+        );
+
+    box-shadow:
+        0 0 25px rgba(185, 220, 255, 0.25),
+        0 0 70px rgba(185, 220, 255, 0.12);
+
+    animation: core-pulse 3s ease-in-out infinite;
+}
+
+.core-center::before {
+    content: "";
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: var(--color-white);
+
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(185, 220, 255, 0.8);
+}
+
+
+/* =========================================================
+   05. INFORMAÇÕES DO NÚCLEO
+========================================================= */
+
+.core-information {
+    position: absolute;
+
+    right: var(--space-6);
+    bottom: var(--space-5);
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--color-text-muted);
+
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.core-information::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--color-online);
+
+    box-shadow:
+        0 0 8px var(--color-online);
+}
+
+
+/* =========================================================
+   06. GRADE PRINCIPAL
+========================================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-6);
+}
+
+
+/* =========================================================
+   07. CARDS DE INDICADORES
+========================================================= */
+
+.dashboard-card {
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+
+    animation: stagger-entrance 0.6s var(--transition-smooth) both;
+}
+
+.dashboard-card:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+.dashboard-card:nth-child(2) {
+    animation-delay: 0.14s;
+}
+
+.dashboard-card:nth-child(3) {
+    animation-delay: 0.20s;
+}
+
+.dashboard-card:nth-child(4) {
+    animation-delay: 0.26s;
+}
+
+.dashboard-card .card-main-value {
+    margin-top: auto;
+    margin-bottom: var(--space-4);
+}
+
+.dashboard-card .card-footer {
+    margin-top: auto;
+}
+
+
+/* =========================================================
+   08. PROGRESSO
+========================================================= */
+
+.dashboard-card .progress-bar {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+.dashboard-card .progress-fill {
+    box-shadow:
+        0 0 12px rgba(185, 220, 255, 0.14);
+}
+
+
+/* =========================================================
+   09. MINI DESEMPENHO
+========================================================= */
+
+.performance-mini {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    margin-top: auto;
+}
+
+.performance-item {
+    display: grid;
+
+    grid-template-columns: 72px 1fr 42px;
+
+    align-items: center;
+
+    gap: var(--space-3);
+}
+
+.performance-item span {
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.04em;
+}
+
+.performance-item strong {
+    color: var(--color-text-soft);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   10. PRÓXIMA ATIVIDADE
+========================================================= */
+
+.next-activity {
+    position: relative;
+
+    min-height: 210px;
+
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.005)
+        );
+
+    box-shadow: var(--shadow-small);
+
+    animation: slide-up 0.7s var(--transition-smooth) 0.25s both;
+}
+
+.next-activity::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background: var(--color-accent);
+
+    box-shadow:
+        0 0 18px rgba(185, 220, 255, 0.25);
+}
+
+.next-activity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: var(--space-6);
+}
+
+.next-activity-header h3 {
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+}
+
+.activity-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--color-online);
+
+    font-size: var(--font-size-xs);
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.next-activity-content {
+    display: grid;
+
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: var(--space-5);
+}
+
+.activity-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(185, 220, 255, 0.08),
+            rgba(185, 220, 255, 0.02)
+        );
+
+    color: var(--color-accent);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+
+    box-shadow:
+        inset 0 0 20px rgba(185, 220, 255, 0.025);
+}
+
+.activity-information {
+    min-width: 0;
+}
+
+.activity-information h4 {
+    margin-bottom: var(--space-2);
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-lg);
+}
+
+.activity-information p {
+    font-size: var(--font-size-sm);
+}
+
+.activity-countdown {
+    min-width: 130px;
+
+    padding-left: var(--space-5);
+
+    border-left: 1px solid var(--color-border);
+
+    text-align: right;
+}
+
+.activity-countdown span {
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.activity-countdown strong {
+    color: var(--color-text);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-medium);
+}
+
+
+/* =========================================================
+   11. STATUS DA SEXTA-FEIRA
+========================================================= */
+
+.assistant-status {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+
+    gap: var(--space-6);
+
+    margin-bottom: var(--space-6);
+    padding: var(--space-6);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.005)
+        );
+
+    box-shadow: var(--shadow-small);
+
+    animation: slide-up 0.7s var(--transition-smooth) 0.3s both;
+}
+
+.assistant-identity {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-5);
+}
+
+.assistant-symbol {
+    position: relative;
+
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--color-border-strong);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(185, 220, 255, 0.12),
+            rgba(185, 220, 255, 0.025)
+        );
+
+    color: var(--color-accent);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-md);
+
+    box-shadow:
+        0 0 25px rgba(185, 220, 255, 0.06);
+}
+
+.assistant-symbol::after {
+    content: "";
+
+    position: absolute;
+    inset: 7px;
+
+    border: 1px solid rgba(185, 220, 255, 0.12);
+    border-radius: 50%;
+}
+
+.assistant-identity h3 {
+    margin-bottom: var(--space-1);
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-lg);
+}
+
+.assistant-identity p {
+    font-size: var(--font-size-sm);
+}
+
+.assistant-capabilities {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: var(--space-3);
+}
+
+.capability {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    padding: var(--space-3);
+
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-sm);
+
+    background: rgba(255, 255, 255, 0.012);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+
+    transition:
+        background var(--transition-normal),
+        border-color var(--transition-normal),
+        color var(--transition-normal);
+}
+
+.capability:hover {
+    border-color: var(--color-border);
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--color-text-soft);
+}
+
+.capability .system-dot {
+    width: 5px;
+    height: 5px;
+}
+
+
+/* =========================================================
+   12. AÇÕES RÁPIDAS
+========================================================= */
+
+.quick-actions {
+    margin-bottom: var(--space-8);
+
+    animation: slide-up 0.7s var(--transition-smooth) 0.35s both;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: var(--space-4);
+}
+
+.section-heading h3 {
+    color: var(--color-text);
+
+    font-size: var(--font-size-md);
+}
+
+.section-heading span {
+    color: var(--color-text-dim);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.08em;
+}
+
+.quick-actions-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: var(--space-4);
+}
+
+.quick-action {
+    min-height: 105px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: var(--space-5);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0.005)
+        );
+
+    color: var(--color-text-soft);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition-smooth),
+        border-color var(--transition-normal),
+        background var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.quick-action:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--color-border-strong);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(185, 220, 255, 0.05),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    box-shadow:
+        var(--shadow-small),
+        0 0 25px rgba(185, 220, 255, 0.035);
+}
+
+.quick-action:active {
+    transform: translateY(-1px);
+}
+
+.quick-action-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    color: var(--color-accent);
+
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+}
+
+.quick-action span {
+    color: var(--color-text-soft);
+
+    font-size: var(--font-size-sm);
+}
+
+
+/* =========================================================
+   13. RODAPÉ DO DASHBOARD
+========================================================= */
+
+.dashboard-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: var(--space-5);
+
+    border-top: 1px solid var(--color-border-soft);
+
+    color: var(--color-text-dim);
+
+    font-size: var(--font-size-xs);
+
+    animation: fade-in 0.8s ease 0.5s both;
+}
+
+.dashboard-footer > div {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.dashboard-footer strong {
+    color: var(--color-text-muted);
+
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   14. RESPONSIVIDADE — TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-actions-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .welcome-panel {
+        grid-template-columns:
+            minmax(0, 1fr) 240px;
+    }
+
+    .core-orb {
+        width: 220px;
+        height: 220px;
+    }
+
+    .ring-one {
+        width: 105px;
+        height: 105px;
+    }
+
+    .ring-two {
+        width: 155px;
+        height: 155px;
+    }
+
+    .ring-three {
+        width: 205px;
+        height: 205px;
+    }
+}
+
+
+/* =========================================================
+   15. RESPONSIVIDADE — MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        padding-bottom: var(--space-8);
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-date {
+        width: 100%;
+        text-align: left;
+    }
+
+    .welcome-panel {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        padding: var(--space-6);
+    }
+
+    .welcome-content {
+        max-width: none;
+    }
+
+    .core-orb {
+        margin-top: var(--space-6);
+        margin-bottom: var(--space-3);
+
+        transform: scale(0.82);
+    }
+
+    .core-information {
+        right: var(--space-4);
+        bottom: var(--space-4);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .next-activity-content {
+        grid-template-columns: 60px minmax(0, 1fr);
+    }
+
+    .activity-countdown {
+        grid-column: 2;
+
+        min-width: 0;
+
+        padding-left: 0;
+
+        padding-top: var(--space-3);
+
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+
+        text-align: left;
+    }
+
+    .assistant-status {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+}
+
+
+/* =========================================================
+   16. RESPONSIVIDADE — CELULAR
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .dashboard-header {
+        margin-bottom: var(--space-6);
+    }
+
+    .dashboard-heading h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .welcome-panel {
+        padding: var(--space-5);
+    }
+
+    .welcome-content h2 {
+        font-size: var(--font-size-lg);
+    }
+
+    .core-orb {
+        transform: scale(0.7);
+        margin-top: var(--space-3);
+        margin-bottom: 0;
+    }
+
+    .next-activity {
+        padding: var(--space-5);
+    }
+
+    .next-activity-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .next-activity-content {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: var(--space-3);
+    }
+
+    .activity-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+    .activity-information h4 {
+        font-size: var(--font-size-md);
+    }
+
+    .assistant-status {
+        padding: var(--space-5);
+    }
+
+    .assistant-capabilities {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-action {
+        min-height: 90px;
+    }
+}
+
+
+/* =========================================================
+   17. ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dashboard-header,
+    .welcome-panel,
+    .dashboard-card,
+    .next-activity,
+    .assistant-status,
+    .quick-actions,
+    .dashboard-footer {
+        animation: none;
+    }
+
+    .quick-action:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   CENTRAL DE COMANDO — VÍDEOS
+   ========================================================= */
+
+.central-animation {
+    position: relative;
+    width: min(100%, 360px);
+    height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.central-logo-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    pointer-events: none;
+}
+
+
+.central-decoration {
+    position: absolute;
+
+    right: 24px;
+    bottom: 20px;
+
+    width: 110px;
+    height: 110px;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    opacity: 0.75;
+}
+
+.central-decoration-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: transparent;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .central-animation {
+        width: min(100%, 300px);
+        height: 230px;
+    }
+
+    .central-decoration {
+        width: 90px;
+        height: 90px;
+
+        right: 18px;
+        bottom: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .central-animation {
+        width: min(100%, 330px);
+        height: 240px;
+    }
+
+    .central-decoration {
+        width: 80px;
+        height: 80px;
+
+        right: 14px;
+        bottom: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .central-animation {
+        width: 100%;
+        height: 210px;
+    }
+
+    .central-decoration {
+        width: 65px;
+        height: 65px;
+
+        right: 10px;
+        bottom: 10px;
+
+        opacity: 0.65;
+    }
+
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .central-logo-video,
+    .central-decoration-video {
+        animation: none;
+    }
+
+}
+
+
+
+/* =========================================================
+   CENTRAL DE COMANDO — VIDEO STAGE
+   ========================================================= */
+
+/* Mata as regras antigas do núcleo */
+.welcome-status .core-orb,
+.welcome-status .core-ring,
+.welcome-status .core-center {
+    display: none !important;
+}
+
+
+/* Área inteira dos vídeos */
+.welcome-status {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 300px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    color: inherit;
+}
+
+
+/* Palco central */
+.central-video-stage {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VÍDEO PRINCIPAL
+   ========================================================= */
+
+.central-logo-video {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    height: 90%;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   VÍDEO DECORATIVO
+   ========================================================= */
+
+.central-decoration-video {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INFORMAÇÃO
+   ========================================================= */
+
+.welcome-status .core-information {
+    position: absolute !important;
+
+    left: 50%;
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+
+    margin: 0;
+
+    white-space: nowrap;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .welcome-status {
+        min-height: 260px !important;
+    }
+
+    .central-logo-video {
+        width: 88%;
+        height: 88%;
+    }
+
+    .central-decoration-video {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .welcome-status {
+        min-height: 280px !important;
+    }
+
+    .central-logo-video {
+        width: 82%;
+        height: 82%;
+    }
+
+    .central-decoration-video {
+        width: 95%;
+        height: 95%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .welcome-status {
+        min-height: 240px !important;
+    }
+
+    .central-logo-video {
+        width: 90%;
+        height: 90%;
+    }
+
+    .central-decoration-video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .welcome-status .core-information {
+        bottom: 12px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   CENTRAL DE COMANDO
+   ESTRUTURA AMPLIADA PARA O VÍDEO
+   ========================================================= */
+
+.welcome-panel {
+    position: relative !important;
+
+    overflow: hidden !important;
+
+    isolation: isolate;
+
+    /*
+     * AUMENTAMOS A ALTURA DO ESQUELETO
+     * para combinar melhor com a proporção do vídeo.
+     */
+    min-height: 700px !important;
+
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   VÍDEO
+   ========================================================= */
+
+/* =========================================================
+   VÍDEO — 100% DA CENTRAL
+   ========================================================= */
+
+.command-background-video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /*
+     * Preenche 100% da área disponível
+     * sem deformar a imagem.
+     */
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    z-index: -3;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   CAMADA SOBRE O VÍDEO
+   ========================================================= */
+
+.command-background-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 6, 8, 0.72) 0%,
+            rgba(4, 6, 8, 0.40) 38%,
+            rgba(4, 6, 8, 0.12) 70%,
+            rgba(4, 6, 8, 0.20) 100%
+        );
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.welcome-panel .welcome-content {
+    position: relative;
+
+    z-index: 5;
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 50px;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.welcome-panel .welcome-status-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    max-width: 520px;
+}
+
+
+.welcome-panel .welcome-status-text > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 0.18em;
+
+    color: var(--color-text-muted);
+}
+
+
+.welcome-panel .welcome-status-text h2 {
+    margin: 0;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 22px;
+
+    letter-spacing: 0.04em;
+
+    color: var(--color-text);
+}
+
+
+.welcome-panel .welcome-status-text p {
+    margin: 0;
+
+    color: var(--color-text-soft);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   NÚCLEO OPERACIONAL
+   ========================================================= */
+
+.welcome-panel .core-information {
+    position: absolute;
+
+    right: 28px;
+    bottom: 22px;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 4px;
+
+    margin: 0;
+}
+
+
+.welcome-panel .core-information span {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.18em;
+
+    color: var(--color-text-muted);
+}
+
+
+.welcome-panel .core-information strong {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: var(--color-text-soft);
+}
+
+
+/* =========================================================
+   BORDA
+   ========================================================= */
+
+.welcome-panel::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    border: 1px solid rgba(185, 220, 255, 0.08);
+
+    box-shadow:
+        inset 0 0 80px rgba(0, 0, 0, 0.25),
+        inset 0 0 180px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   LINHA SUPERIOR
+   ========================================================= */
+
+.welcome-panel::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 1px;
+
+    z-index: 20;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 220, 255, 0.5),
+            transparent
+        );
+
+    opacity: 0.7;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .welcome-panel {
+        min-height: 400px !important;
+    }
+
+    .welcome-panel .welcome-content {
+        min-height: 400px;
+
+        padding: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .welcome-panel {
+        min-height: 380px !important;
+    }
+
+    .welcome-panel .welcome-content {
+        min-height: 380px;
+
+        align-items: flex-end;
+
+        padding: 28px;
+
+        padding-bottom: 65px;
+    }
+
+    .command-background-video {
+        object-fit: contain;
+    }
+
+    .command-background-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(4, 6, 8, 0.20) 0%,
+                rgba(4, 6, 8, 0.42) 50%,
+                rgba(4, 6, 8, 0.88) 100%
+            );
+    }
+
+    .welcome-panel .core-information {
+        right: 20px;
+        bottom: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .welcome-panel {
+        min-height: 350px !important;
+    }
+
+    .welcome-panel .welcome-content {
+        min-height: 350px;
+
+        padding: 20px;
+
+        padding-bottom: 58px;
+    }
+
+    .welcome-panel .welcome-status-text h2 {
+        font-size: 18px;
+    }
+
+    .welcome-panel .welcome-status-text p {
+        font-size: 13px;
+    }
+
+    .welcome-panel .core-information {
+        right: 18px;
+        bottom: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .command-background-video {
+        animation: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

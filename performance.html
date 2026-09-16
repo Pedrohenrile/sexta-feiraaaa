@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ORION — Performance</title>
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- =====================================================
+         CSS GLOBAL
+    ====================================================== -->
+
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- CSS EXCLUSIVO DA PERFORMANCE -->
+
+    <link rel="stylesheet" href="css/performace.css">
+</head>
+
+
+<body class="system-body performance-page">
+
+    <!-- =====================================================
+         AMBIENTE VISUAL
+    ====================================================== -->
+
+    <div class="system-background">
+
+        <div class="ambient-light ambient-light-one"></div>
+        <div class="ambient-light ambient-light-two"></div>
+
+        <div class="tech-grid"></div>
+
+        <div class="scanline"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SISTEMA
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+      <!-- =========================================================
+     BARRA LATERAL
+========================================================= -->
+
+<aside class="sidebar">
+
+    <!-- IDENTIDADE -->
+    <div class="sidebar-brand">
+
+        <div class="brand-symbol">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="brand-information">
+
+            <h1>SEXTA-FEIRA</h1>
+
+            <span>
+                SISTEMA PESSOAL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATUS -->
+    <div class="sidebar-status">
+
+        <div class="status-indicator">
+
+            <span class="system-dot"></span>
+
+            <span>
+                SISTEMA ONLINE
+            </span>
+
+        </div>
+
+        <span class="status-description">
+            NÚCLEO OPERACIONAL
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO
+    ====================================================== -->
+
+    <nav class="navigation">
+
+
+        <!-- =================================================
+             CENTRAL
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                CENTRAL
+            </span>
+
+
+            <!-- CENTRAL DE COMANDO -->
+
+            <a
+                href="index.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Central de Comando
+                </span>
+
+            </a>
+
+
+            <!-- ASSISTENTE — PÁGINA ATUAL -->
+
+            <a
+                href="assistant.html"
+                class="navigation-item active"
+            >
+
+                <span class="navigation-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Assistente
+                </span>
+
+            </a>
+
+
+            <!-- AGENDA -->
+
+            <a
+                href="agenda.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◫
+                </span>
+
+                <span>
+                    Agenda
+                </span>
+
+            </a>
+
+
+            <!-- MEMÓRIA -->
+
+            <a
+                href="memory.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◎
+                </span>
+
+                <span>
+                    Memória
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESENVOLVIMENTO
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                DESENVOLVIMENTO
+            </span>
+
+
+            <!-- DESEMPENHO -->
+
+            <a
+                href="performance.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◌
+                </span>
+
+                <span>
+                    Desempenho
+                </span>
+
+            </a>
+
+
+            <!-- PROJETOS -->
+
+            <a
+                href="projects.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◇
+                </span>
+
+                <span>
+                    Projetos
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SISTEMA
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                SISTEMA
+            </span>
+
+
+            <!-- SEGURANÇA -->
+
+            <a
+                href="system.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ⛨
+                </span>
+
+                <span>
+                    Segurança
+                </span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         RODAPÉ DA BARRA
+    ====================================================== -->
+
+    <div class="sidebar-footer">
+
+        <div class="system-version">
+
+            <span>
+                INSTÂNCIA LOCAL
+            </span>
+
+            <strong>
+                ORION 1.0
+            </strong>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+        <!-- =================================================
+             CONTEÚDO PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <span class="breadcrumb">
+                        ORION
+                    </span>
+
+                    <span class="breadcrumb-separator">
+                        /
+                    </span>
+
+                    <span class="breadcrumb-current">
+                        PERFORMANCE
+                    </span>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="connection-status">
+
+                        <span class="system-dot online"></span>
+
+                        <span>
+                            CONEXÃO SEGURA
+                        </span>
+
+                    </div>
+
+
+                    <div class="system-time" id="current-time">
+                        --:--:--
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PERFORMANCE HEADER
+            ================================================== -->
+
+            <section class="performance-header">
+
+                <div class="performance-heading">
+
+                    <span class="section-label">
+                        BIOMETRIC CORE
+                    </span>
+
+                    <h1>
+                        PERFORMANCE
+                    </h1>
+
+                    <p>
+                        Monitoramento físico, evolução e análise
+                        inteligente do seu desempenho.
+                    </p>
+
+                </div>
+
+
+                <div class="performance-header-status">
+
+                    <span class="system-dot online"></span>
+
+                    <div>
+
+                        <span class="status-title">
+                            MONITORAMENTO ATIVO
+                        </span>
+
+                        <span class="status-subtitle">
+                            DADOS BIOMÉTRICOS LOCAIS
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 HERO BIOMÉTRICO
+            ================================================== -->
+
+            <section class="biometric-hero">
+
+
+                <!-- LINHAS DE CONEXÃO -->
+
+                <div class="biometric-connections">
+
+                    <span class="connection-line line-top"></span>
+                    <span class="connection-line line-left"></span>
+                    <span class="connection-line line-right"></span>
+                    <span class="connection-line line-bottom"></span>
+
+                </div>
+
+
+
+                <!-- PAINEL SUPERIOR -->
+
+                <div class="biometric-panel biometric-state-panel">
+
+                    <span class="panel-label">
+                        ESTADO FÍSICO
+                    </span>
+
+                    <strong class="biometric-optimization" data-biometric-optimization>
+                        78%
+                    </strong>
+
+                    <span class="panel-status">
+                        OTIMIZAÇÃO
+                    </span>
+
+                </div>
+
+
+
+                <!-- PAINEL ESQUERDO SUPERIOR -->
+
+                <div class="biometric-panel biometric-side-panel panel-left-top">
+
+                    <span class="panel-label">
+                        PESO ATUAL
+                    </span>
+
+                    <strong data-biometric-weight>
+                        63
+                    </strong>
+
+                    <span>
+                        KG
+                    </span>
+
+                </div>
+
+
+
+                <!-- PAINEL DIREITO SUPERIOR -->
+
+                <div class="biometric-panel biometric-side-panel panel-right-top">
+
+                    <span class="panel-label">
+                        META
+                    </span>
+
+                    <strong data-biometric-goal>
+                        70
+                    </strong>
+
+                    <span>
+                        KG
+                    </span>
+
+                </div>
+
+
+
+                <!-- PAINEL ESQUERDO INFERIOR -->
+
+                <div class="biometric-panel biometric-side-panel panel-left-bottom">
+
+                    <span class="panel-label">
+                        ALTURA
+                    </span>
+
+                    <strong>
+                        1,75
+                    </strong>
+
+                    <span>
+                        M
+                    </span>
+
+                </div>
+
+
+
+                <!-- PAINEL DIREITO INFERIOR -->
+
+                <div class="biometric-panel biometric-side-panel panel-right-bottom">
+
+                    <span class="panel-label">
+                        PROGRESSO
+                    </span>
+
+                    <strong data-biometric-progress>
+                        42%
+                    </strong>
+
+                    <span>
+                        META
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     HOLOGRAMA
+                ================================================== -->
+                <!-- =====================================================
+     MODELO BIOMÉTRICO
+     ===================================================== -->
+
+                <div class="biometric-human">
+
+                    <div class="biometric-radar"></div>
+
+                    <div class="biometric-scan"></div>
+
+                    <img src="corposbg.png" alt="Modelo corporal biométrico" class="biometric-human-image">
+                    <!-- PONTO DE FOCO -->
+                    <div class="biometric-focus-point biometric-focus-shoulders">
+                        <span></span>
+                    </div>
+
+                    <!-- LINHA DE SCANNER -->
+                    <div class="biometric-horizontal-line"></div>
+
+                </div>
+
+
+                <!-- LABEL DO HOLOGRAMA -->
+
+                <div class="hologram-label">
+
+                    <span>
+                        BIOMETRIC
+                    </span>
+
+                    <strong>
+                        HUMAN
+                    </strong>
+
+                    <small>
+                        SCAN // ACTIVE
+                    </small>
+
+                </div>
+
+
+
+                <!-- FOCO ATUAL -->
+
+                <div class="biometric-focus-panel">
+
+                    <span class="panel-label">
+                        FOCO ATUAL
+                    </span>
+
+                    <strong data-muscle-focus>
+                        OMBROS
+                    </strong>
+
+                    <div class="focus-progress">
+
+                        <div class="focus-progress-bar" data-muscle-focus-bar style="width: 78%;"></div>
+
+                    </div>
+
+                    <span class="focus-description">
+                        GRUPO MUSCULAR PRIORITÁRIO
+                    </span>
+
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BIOMETRIA
+            ================================================== -->
+
+            <section class="performance-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            DADOS PRINCIPAIS
+                        </span>
+
+                        <h2>
+                            Biometria
+                        </h2>
+
+                    </div>
+
+
+                    <button class="button button-secondary" data-action="biometric-update">
+                        + ATUALIZAR BIOMETRIA
+                    </button>
+
+                </div>
+
+
+
+                <div class="biometric-grid">
+
+
+                    <article class="biometric-card">
+
+                        <span class="card-label">
+                            PESO ATUAL
+                        </span>
+
+                        <strong data-biometric-weight>
+                            63
+                        </strong>
+
+                        <span class="card-unit">
+                            KG
+                        </span>
+
+                    </article>
+
+
+                    <article class="biometric-card">
+
+                        <span class="card-label">
+                            META DE PESO
+                        </span>
+
+                        <strong data-biometric-goal>
+                            70
+                        </strong>
+
+                        <span class="card-unit">
+                            KG
+                        </span>
+
+                    </article>
+
+
+                    <article class="biometric-card">
+
+                        <span class="card-label">
+                            ALTURA
+                        </span>
+
+                        <strong>
+                            1,75
+                        </strong>
+
+                        <span class="card-unit">
+                            M
+                        </span>
+
+                    </article>
+
+
+                    <article class="biometric-card">
+
+                        <span class="card-label">
+                            % GORDURA
+                        </span>
+
+                        <strong>
+                            --
+                        </strong>
+
+                        <span class="card-unit">
+                            %
+                        </span>
+
+                    </article>
+
+
+                    <article class="biometric-card">
+
+                        <span class="card-label">
+                            MASSA MAGRA
+                        </span>
+
+                        <strong>
+                            --
+                        </strong>
+
+                        <span class="card-unit">
+                            KG
+                        </span>
+
+                    </article>
+
+
+                    <article class="biometric-card biometric-card-highlight">
+
+                        <span class="card-label">
+                            PROGRESSO
+                        </span>
+
+                        <strong data-biometric-progress>
+                            42%
+                        </strong>
+
+                        <span class="card-unit">
+                            META
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+
+
+            <!-- =================================================
+                 MAPA DE TREINO
+            ================================================== -->
+
+            <!-- =========================================================
+     TRAINING MATRIX
+     ========================================================= -->
+
+            <section class="training-matrix performance-panel training-v2">
+
+                <header class="training-v2-header">
+                    <div>
+                        <span class="section-label">TRAINING MATRIX // 02</span>
+                        <h2>MATRIZ DE TREINO</h2>
+                        <p>Controle da rotina, estímulo e evolução muscular.</p>
+                    </div>
+                    <div class="training-v2-status"><span></span>
+                        <div><strong>SISTEMA ATIVO</strong><small>MONITORAMENTO CONTÍNUO</small></div>
+                    </div>
+                </header>
+
+                <div class="training-v2-week">
+                    <button class="training-v2-day active" data-training-day="monday"
+                        type="button"><b>01</b><strong>SEG</strong><span>Costas +
+                            Bíceps</span><small>PROGRAMADO</small></button>
+                    <button class="training-v2-day" data-training-day="tuesday"
+                        type="button"><b>02</b><strong>TER</strong><span>Peito + Tríceps +
+                            Ombros</span><small>PROGRAMADO</small></button>
+                    <button class="training-v2-day" data-training-day="wednesday"
+                        type="button"><b>03</b><strong>QUA</strong><span>Pernas</span><small>PROGRAMADO</small></button>
+                    <button class="training-v2-day" data-training-day="thursday"
+                        type="button"><b>04</b><strong>QUI</strong><span>Bíceps +
+                            Costas</span><small>PROGRAMADO</small></button>
+                    <button class="training-v2-day" data-training-day="friday"
+                        type="button"><b>05</b><strong>SEX</strong><span>Peito + Tríceps +
+                            Ombros</span><small>PROGRAMADO</small></button>
+                    <button class="training-v2-day" data-training-day="saturday"
+                        type="button"><b>06</b><strong>SÁB</strong><span>Pernas</span><small>PROGRAMADO</small></button>
+                    <button class="training-v2-day training-rest" data-training-day="sunday"
+                        type="button"><b>07</b><strong>DOM</strong><span>Recuperação</span><small>DESCANSO</small></button>
+                </div>
+
+                <div class="training-v2-command">
+                    <div class="training-v2-visual">
+                        <div class="training-v2-corner training-v2-corner-a"></div>
+                        <div class="training-v2-corner training-v2-corner-b"></div>
+                        <div class="training-v2-visual-top"><span>VISUALIZAÇÃO</span><strong>BODY // 01</strong></div>
+                        <div class="training-v2-video-wrap">
+                            <img src="copoppp.png" alt="Mapa corporal de treino"
+                                class="training-body-image">
+                        </div>
+                        <div class="training-v2-visual-bottom"><span><i></i> SISTEMA ONLINE</span><strong>PREPARAÇÃO
+                                ATIVA</strong></div>
+                    </div>
+
+                    <div class="training-v2-control">
+                        <div class="training-v2-control-head">
+                            <div><span class="section-label">TRAINING INTELLIGENCE</span>
+                                <h3>CONTROLE DE TREINO</h3>
+                            </div><span class="training-v2-analyzing"><i></i> ANALISANDO</span>
+                        </div>
+                        <div class="training-v2-current"><small>TREINO ATUAL</small>
+                            <h3 data-selected-training>Peito + Tríceps + Ombros</h3>
+                            <p data-training-description>Sessão programada para desenvolvimento de membros superiores.
+                            </p>
+                        </div>
+                        <div class="training-v2-bars">
+                            <div><label>PEITO <b>76%</b></label><span><i style="width:76%"></i></span></div>
+                            <div><label>TRÍCEPS <b>72%</b></label><span><i style="width:72%"></i></span></div>
+                            <div><label>OMBROS <b>78%</b></label><span><i style="width:78%"></i></span></div>
+                        </div>
+                        <div class="training-v2-telemetry">
+                            <div><small>FREQUÊNCIA</small><strong>2X / SEM</strong></div>
+                            <div><small>SÉRIES</small><strong>3 × 12</strong></div>
+                            <div><small>DURAÇÃO</small><strong>1–2 H</strong></div>
+                        </div>
+                        <div class="training-v2-next"><span>PRÓXIMA SESSÃO</span><strong>SEXTA-FEIRA</strong><b>→</b>
+                        </div>
+                        <button class="training-v2-launch training-launch" type="button"
+                            data-action="start-training"><span>→</span> INICIAR TREINO</button>
+                    </div>
+                </div>
+
+                <footer class="training-v2-footer">
+                    <div><small>CICLO</small><strong>06 SESSÕES</strong></div>
+                    <div><small>FOCO ATUAL</small><strong>OMBROS</strong></div>
+                    <div><small>PRÓXIMO ESTÍMULO</small><strong>AUTOMÁTICO</strong></div>
+                    <div><i></i>MATRIZ OPERACIONAL</div>
+                </footer>
+            </section>
+
+            <section class="mission-v2 performance-panel">
+                <header class="mission-v2-header">
+                    <div><span class="section-label">MISSION OBJECTIVE // 03</span>
+                        <h2>EVOLUÇÃO DE PERFORMANCE</h2>
+                        <p>Uma missão. Um alvo. Dados acompanhando a trajetória.</p>
+                    </div><span class="mission-v2-status"><i></i> MISSÃO ATIVA</span>
+                </header>
+                <div class="mission-v2-grid">
+                    <div class="mission-v2-core">
+                        <div class="mission-v2-ring mission-v2-ring-a"></div>
+                        <div class="mission-v2-ring mission-v2-ring-b"></div>
+                        <div class="mission-v2-core-value"><small>PROGRESSO</small><strong
+                                data-mission-progress>42%</strong><span>MONITORANDO</span></div>
+                    </div>
+                    <div class="mission-v2-path">
+                        <div class="mission-v2-path-head"><span>TRAJETÓRIA DO OBJETIVO</span><b data-mission-id>MISSION
+                                // 004</b></div>
+                        <div class="mission-v2-route">
+                            <div><i></i><small>ATUAL</small><strong data-current-weight>63,0 kg</strong></div><span
+                                class="mission-v2-line"><i data-mission-progress-bar></i></span>
+                            <div><i></i><small>META</small><strong data-target-weight>70,0 kg</strong></div>
+                        </div>
+                        <div class="mission-v2-scale"><span>INÍCIO</span><span>PROGRESSÃO</span><span>OBJETIVO</span>
+                        </div>
+                    </div>
+                    <div class="mission-v2-stats">
+                        <div><small>EVOLUÇÃO</small><strong data-mission-gain>+3,2 kg</strong><span>HISTÓRICO</span>
+                        </div>
+                        <div><small>OTIMIZAÇÃO</small><strong>78%</strong><span>ATIVO</span></div>
+                        <div><small>FOCO</small><strong>OMBROS</strong><span>PRIORITÁRIO</span></div>
+                    </div>
+                </div>
+                <div class="mission-v2-ai">
+                    <div>SF</div>
+                    <p><small>SEXTA-FEIRA / MISSION CORE</small><strong data-mission-analysis>Objetivo ativo. Histórico
+                            de evolução sendo monitorado.</strong><span>A missão será recalculada conforme novos dados
+                            forem registrados.</span></p><em></em>
+                </div>
+            </section>
+
+            <section class="evolution-v2 performance-panel">
+                <header class="evolution-v2-header">
+                    <div><span class="section-label">ANÁLISE CONTÍNUA // 04</span>
+                        <h2>EVOLUÇÃO BIOMÉTRICA</h2>
+                        <p>Leitura dos dados disponíveis e acompanhamento do histórico.</p>
+                    </div><span><i></i> ANÁLISE ATIVA</span>
+                </header>
+                <div class="evolution-v2-monitor">
+                    <div class="evolution-v2-grid"></div>
+                    <div class="evolution-v2-scan"></div>
+                    <div class="evolution-v2-monitor-top"><span>SEXTA-FEIRA / BIOMETRIC CORE</span><b
+                            data-analysis-time>00:00:00</b></div><svg viewBox="0 0 1200 180" preserveAspectRatio="none"
+                        aria-label="Monitor de análise biométrica">
+                        <path
+                            d="M0 90 L100 90 L125 90 L145 48 L165 132 L185 90 L300 90 L325 90 L345 55 L365 125 L385 90 L510 90 L535 90 L555 42 L575 138 L595 90 L720 90 L745 90 L765 58 L785 122 L805 90 L930 90 L955 90 L975 45 L995 135 L1015 90 L1200 90">
+                        </path>
+                    </svg>
+                    <div class="evolution-v2-scan-label"><i></i> ANALISANDO DADOS BIOMÉTRICOS</div>
+                </div>
+                <div class="evolution-v2-metrics">
+                    <article><small>EVOLUÇÃO <b>AO VIVO</b></small><strong>+3,2 kg</strong>
+                        <p>Evolução registrada desde o início do acompanhamento.</p><span><i
+                                style="width:68%"></i></span>
+                    </article>
+                    <article><small>ESTRESSE <b>MONITORAMENTO</b></small><strong data-stress-level>ESTÁVEL</strong>
+                        <p>Indicador comportamental preparado para análise futura.</p><span><i data-stress-bar
+                                style="width:32%"></i></span>
+                    </article>
+                    <article class="cortisol-v2"><small>CORTISOL <b>BIOMARCADOR</b></small><strong
+                            data-cortisol-value>NÃO MEDIDO</strong>
+                        <p>Aguardando dado de exame ou sensor compatível.</p><span>SEM DADO CLÍNICO</span>
+                    </article>
+                    <article><small>PERFORMANCE <b>PROCESSANDO</b></small><strong>84%</strong>
+                        <p>Índice interno de acompanhamento da performance.</p><span><i style="width:84%"></i></span>
+                    </article>
+                </div>
+                <div class="evolution-v2-ai">
+                    <div>SF</div>
+                    <p><small>SEXTA-FEIRA</small><strong data-live-analysis-text>Cruzando evolução, treinamento e
+                            histórico...</strong><span>O sistema permanece analisando os dados disponíveis.</span></p>
+                    <em><i></i><i></i><i></i></em>
+                </div>
+            </section>
+
+            <section class="performance-section">
+                <div class="ai-v2 performance-panel">
+                    <div class="ai-v2-head">
+                        <div>SF</div><span class="section-label">SEXTA-FEIRA / ANÁLISE</span>
+                        <h2>Análise de Performance</h2>
+                    </div>
+                    <p data-performance-analysis>Seu grupo muscular prioritário atual é <strong>ombros</strong>. A
+                        frequência programada é de 2 estímulos semanais, com próximo estímulo previsto para hoje.</p>
+                    <div class="ai-v2-data">
+                        <div><small>FREQUÊNCIA</small><strong>2X</strong></div>
+                        <div><small>FOCO</small><strong>OMBROS</strong></div>
+                        <div><small>CONSISTÊNCIA</small><strong>84%</strong></div>
+                    </div>
+                    <div class="ai-v2-recommendation"><small>RECOMENDAÇÃO</small>
+                        <p>Manter consistência nos treinos, registrar sua evolução e acompanhar o desenvolvimento dos
+                            grupos musculares prioritários ao longo das semanas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="performance-footer">
+                <div><span class="system-dot online"></span> PERFORMANCE CORE ATIVO</div><span>SEXTA-FEIRA // BIOMETRIC
+                    MONITORING</span>
+            </footer>
+        </main>
+
+
+
+
+        <!-- =====================================================
+         NOTIFICAÇÕES
+    ====================================================== -->
+
+        <div class="system-notifications"></div>
+
+
+
+        <!-- =====================================================
+         JAVASCRIPT GLOBAL
+    ====================================================== -->
+
+        <script src="js/clock.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/ui.js"></script>
+        <script src="js/assistant.js"></script>
+        <script src="js/app.js"></script>
+
+        <script src="js/performace.js"></script>
+
+
+</body>
+
+</html>

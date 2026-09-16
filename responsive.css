@@ -1,0 +1,237 @@
+/* =========================================================
+   ORION — RESPONSIVE.CSS
+   RESPONSIVIDADE GLOBAL
+   NÃO ALTERA O DESIGN DESKTOP
+========================================================= */
+
+
+/* =========================================================
+   PROTEÇÃO GLOBAL
+========================================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video,
+svg,
+canvas {
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TELAS MENORES
+   Apenas reduz espaçamentos do conteúdo.
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .main-content {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .main-content {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .topbar {
+        max-width: 100%;
+    }
+
+    .page-content {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .topbar {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    /*
+       Elementos que possuem largura fixa muito grande
+       passam a respeitar a tela.
+    */
+
+    .container {
+        max-width: 100%;
+    }
+
+    img,
+    video,
+    iframe,
+    canvas {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .main-content {
+        width: 100%;
+    }
+
+    .topbar {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .page-content {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR MUITO PEQUENO
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .topbar {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .page-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   TABELAS
+========================================================= */
+
+.table-container,
+.table-wrapper {
+    max-width: 100%;
+}
+
+@media (max-width: 700px) {
+
+    .table-container,
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+}
+
+
+/* =========================================================
+   TEXTOS GRANDES
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+strong {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   CÓDIGO
+========================================================= */
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   FIM
+========================================================= */

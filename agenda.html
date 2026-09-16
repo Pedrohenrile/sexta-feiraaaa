@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ORION — Agenda Inteligente</title>
+
+    <!-- =====================================================
+         FONTES
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         CSS GLOBAL
+    ====================================================== -->
+
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/agenda.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         AMBIENTE
+    ====================================================== -->
+
+    <div class="system-background">
+
+        <div class="ambient-light ambient-light-one"></div>
+        <div class="ambient-light ambient-light-two"></div>
+
+        <div class="tech-grid"></div>
+
+        <div class="scanline"></div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         APLICAÇÃO
+    ====================================================== -->
+
+    <div class="app">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+       <!-- =========================================================
+     BARRA LATERAL
+========================================================= -->
+
+<aside class="sidebar">
+
+    <!-- IDENTIDADE -->
+    <div class="sidebar-brand">
+
+        <div class="brand-symbol">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="brand-information">
+
+            <h1>SEXTA-FEIRA</h1>
+
+            <span>
+                SISTEMA PESSOAL
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATUS -->
+    <div class="sidebar-status">
+
+        <div class="status-indicator">
+
+            <span class="system-dot"></span>
+
+            <span>
+                SISTEMA ONLINE
+            </span>
+
+        </div>
+
+        <span class="status-description">
+            NÚCLEO OPERACIONAL
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         NAVEGAÇÃO
+    ====================================================== -->
+
+    <nav class="navigation">
+
+
+        <!-- =================================================
+             CENTRAL
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                CENTRAL
+            </span>
+
+
+            <!-- CENTRAL DE COMANDO -->
+
+            <a
+                href="index.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◈
+                </span>
+
+                <span>
+                    Central de Comando
+                </span>
+
+            </a>
+
+
+            <!-- ASSISTENTE — PÁGINA ATUAL -->
+
+            <a
+                href="assistant.html"
+                class="navigation-item active"
+            >
+
+                <span class="navigation-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Assistente
+                </span>
+
+            </a>
+
+
+            <!-- AGENDA -->
+
+            <a
+                href="agenda.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◫
+                </span>
+
+                <span>
+                    Agenda
+                </span>
+
+            </a>
+
+
+            <!-- MEMÓRIA -->
+
+            <a
+                href="memory.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◎
+                </span>
+
+                <span>
+                    Memória
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DESENVOLVIMENTO
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                DESENVOLVIMENTO
+            </span>
+
+
+            <!-- DESEMPENHO -->
+
+            <a
+                href="performance.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◌
+                </span>
+
+                <span>
+                    Desempenho
+                </span>
+
+            </a>
+
+
+            <!-- PROJETOS -->
+
+            <a
+                href="projects.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ◇
+                </span>
+
+                <span>
+                    Projetos
+                </span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SISTEMA
+        ================================================== -->
+
+        <div class="navigation-group">
+
+            <span class="navigation-title">
+                SISTEMA
+            </span>
+
+
+            <!-- SEGURANÇA -->
+
+            <a
+                href="system.html"
+                class="navigation-item"
+            >
+
+                <span class="navigation-icon">
+                    ⛨
+                </span>
+
+                <span>
+                    Segurança
+                </span>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         RODAPÉ DA BARRA
+    ====================================================== -->
+
+    <div class="sidebar-footer">
+
+        <div class="system-version">
+
+            <span>
+                INSTÂNCIA LOCAL
+            </span>
+
+            <strong>
+                ORION 1.0
+            </strong>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+        <!-- =================================================
+             CONTEÚDO
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOPBAR
+            ================================================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <div class="breadcrumb">
+
+                        <span>
+                            ORION
+                        </span>
+
+                        <span class="breadcrumb-separator">
+                            /
+                        </span>
+
+                        <span>
+                            AGENDA
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="connection-status">
+
+                        <span class="status-light online"></span>
+
+                        <span>
+                            CONEXÃO SEGURA
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="system-time"
+                        id="current-time"
+                    >
+                        --:--:--
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 AGENDA
+            ================================================== -->
+
+            <section class="agenda-page">
+
+
+                <!-- =================================================
+                     CABEÇALHO
+                ================================================== -->
+
+                <header class="agenda-header">
+
+
+                    <div class="agenda-heading">
+
+                        <span class="section-label">
+                            ORGANIZAÇÃO PESSOAL
+                        </span>
+
+                        <h1>
+                            AGENDA INTELIGENTE
+                        </h1>
+
+                        <p>
+                            Seu dia organizado em um único lugar.
+                        </p>
+
+                    </div>
+
+
+                    <div class="agenda-header-actions">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            data-action="today"
+                        >
+                            HOJE
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            data-action="new-event"
+                        >
+                            + NOVO COMPROMISSO
+                        </button>
+
+                    </div>
+
+                </header>
+
+
+
+                <!-- =================================================
+                     RESUMO DO DIA
+                ================================================== -->
+
+                <section class="agenda-overview">
+
+
+                    <!-- Dia -->
+
+                    <div class="agenda-date-card panel">
+
+                        <div class="agenda-date-top">
+
+                            <span class="section-label">
+                                HOJE
+                            </span>
+
+                            <span class="agenda-live">
+                                <span class="status-light online"></span>
+                                AO VIVO
+                            </span>
+
+                        </div>
+
+
+                        <div class="agenda-date-main">
+
+                            <span
+                                class="agenda-weekday"
+                                id="agenda-weekday"
+                            >
+                                --
+                            </span>
+
+                            <strong
+                                class="agenda-day"
+                                id="agenda-day"
+                            >
+                                --
+                            </strong>
+
+                            <span
+                                class="agenda-month"
+                                id="agenda-month"
+                            >
+                                --
+                            </span>
+
+                        </div>
+
+
+                        <div class="agenda-date-footer">
+
+                            <span>
+                                <span id="agenda-full-date">
+                                    Sincronizando data...
+                                </span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Próxima atividade -->
+
+                    <div class="agenda-next-card panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    PRÓXIMA ATIVIDADE
+                                </span>
+
+                                <h2 class="panel-title">
+                                    Próximo compromisso
+                                </h2>
+
+                            </div>
+
+                            <span class="status-badge info">
+                                PROGRAMADO
+                            </span>
+
+                        </div>
+
+
+                        <div class="next-event">
+
+                            <div class="next-event-time">
+
+                                <span>
+                                    16:00
+                                </span>
+
+                                <small>
+                                    HOJE
+                                </small>
+
+                            </div>
+
+
+                            <div class="next-event-information">
+
+                                <strong>
+                                    Academia
+                                </strong>
+
+                                <span>
+                                    Treino programado
+                                </span>
+
+                                <small>
+                                    Peito + Tríceps + Ombros
+                                </small>
+
+                            </div>
+
+
+                            <div class="next-event-countdown">
+
+                                <span>
+                                    EM
+                                </span>
+
+                                <strong id="next-event-countdown">
+                                    --:--
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Resumo -->
+
+                    <div class="agenda-summary panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    RESUMO
+                                </span>
+
+                                <h2 class="panel-title">
+                                    Estado do dia
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="agenda-summary-grid">
+
+
+                            <div class="agenda-summary-item">
+
+                                <span>
+                                    COMPROMISSOS
+                                </span>
+
+                                <strong>
+                                    04
+                                </strong>
+
+                            </div>
+
+
+                            <div class="agenda-summary-item">
+
+                                <span>
+                                    PENDÊNCIAS
+                                </span>
+
+                                <strong>
+                                    02
+                                </strong>
+
+                            </div>
+
+
+                            <div class="agenda-summary-item">
+
+                                <span>
+                                    PRIORIDADE
+                                </span>
+
+                                <strong>
+                                    01
+                                </strong>
+
+                            </div>
+
+
+                            <div class="agenda-summary-item">
+
+                                <span>
+                                    STATUS
+                                </span>
+
+                                <strong class="summary-online">
+                                    OK
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     CORPO PRINCIPAL
+                ================================================== -->
+
+                <div class="agenda-layout">
+
+
+                    <!-- =================================================
+                         LINHA DO TEMPO
+                    ================================================== -->
+
+                    <section class="agenda-timeline panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-label">
+                                    LINHA DO TEMPO
+                                </span>
+
+                                <h2 class="panel-title">
+                                    Programação de hoje
+                                </h2>
+
+                            </div>
+
+
+                            <div class="timeline-date">
+                                HOJE
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="timeline">
+
+
+                            <!-- Escola -->
+
+                            <article class="timeline-event completed">
+
+                                <div class="timeline-time">
+                                    <strong>
+                                        06:00
+                                    </strong>
+
+                                    <span>
+                                        12:00
+                                    </span>
+                                </div>
+
+
+                                <div class="timeline-line">
+
+                                    <span class="timeline-dot"></span>
+
+                                </div>
+
+
+                                <div class="timeline-content">
+
+                                    <div class="timeline-event-header">
+
+                                        <span class="event-category school">
+                                            ESCOLA
+                                        </span>
+
+                                        <span class="event-status">
+                                            CONCLUÍDO
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Período escolar
+                                    </h3>
+
+                                    <p>
+                                        Aulas e atividades da manhã.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- Almoço -->
+
+                            <article class="timeline-event">
+
+                                <div class="timeline-time">
+
+                                    <strong>
+                                        12:00
+                                    </strong>
+
+                                    <span>
+                                        13:00
+                                    </span>
+
+                                </div>
+
+
+                                <div class="timeline-line">
+
+                                    <span class="timeline-dot"></span>
+
+                                </div>
+
+
+                                <div class="timeline-content">
+
+                                    <div class="timeline-event-header">
+
+                                        <span class="event-category personal">
+                                            PESSOAL
+                                        </span>
+
+                                        <span class="event-status">
+                                            PROGRAMADO
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Almoço + descanso
+                                    </h3>
+
+                                    <p>
+                                        Recuperação antes do próximo bloco do dia.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- Estudos -->
+
+                            <article class="timeline-event">
+
+                                <div class="timeline-time">
+
+                                    <strong>
+                                        14:00
+                                    </strong>
+
+                                    <span>
+                                        15:30
+                                    </span>
+
+                                </div>
+
+
+                                <div class="timeline-line">
+
+                                    <span class="timeline-dot"></span>
+
+                                </div>
+
+
+                                <div class="timeline-content">
+
+                                    <div class="timeline-event-header">
+
+                                        <span class="event-category study">
+                                            ESTUDOS
+                                        </span>
+
+                                        <span class="event-status">
+                                            PROGRAMADO
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Bloco de estudos
+                                    </h3>
+
+                                    <p>
+                                        Revisão e preparação para o ENEM.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- Academia -->
+
+                            <article class="timeline-event active-event">
+
+                                <div class="timeline-time">
+
+                                    <strong>
+                                        16:00
+                                    </strong>
+
+                                    <span>
+                                        18:00
+                                    </span>
+
+                                </div>
+
+
+                                <div class="timeline-line">
+
+                                    <span class="timeline-dot"></span>
+
+                                </div>
+
+
+                                <div class="timeline-content">
+
+                                    <div class="timeline-event-header">
+
+                                        <span class="event-category gym">
+                                            ACADEMIA
+                                        </span>
+
+                                        <span class="event-status">
+                                            PRÓXIMO
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Treino
+                                    </h3>
+
+                                    <p>
+                                        Peito + tríceps + ombros.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+
+                            <!-- Projeto -->
+
+                            <article class="timeline-event">
+
+                                <div class="timeline-time">
+
+                                    <strong>
+                                        19:00
+                                    </strong>
+
+                                    <span>
+                                        21:00
+                                    </span>
+
+                                </div>
+
+
+                                <div class="timeline-line">
+
+                                    <span class="timeline-dot"></span>
+
+                                </div>
+
+
+                                <div class="timeline-content">
+
+                                    <div class="timeline-event-header">
+
+                                        <span class="event-category project">
+                                            PROJETO
+                                        </span>
+
+                                        <span class="event-status">
+                                            PROGRAMADO
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Projeto ORION
+                                    </h3>
+
+                                    <p>
+                                        Desenvolvimento da próxima etapa do sistema.
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =================================================
+                         PAINEL LATERAL
+                    ================================================== -->
+
+                    <aside class="agenda-side">
+
+
+                        <!-- Prioridade -->
+
+                        <section class="agenda-priority panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-label">
+                                        INTELIGÊNCIA
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Prioridade atual
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="priority-content">
+
+                                <div class="priority-number">
+                                    01
+                                </div>
+
+
+                                <div class="priority-information">
+
+                                    <span>
+                                        FOCO PRINCIPAL
+                                    </span>
+
+                                    <strong>
+                                        Bloco de estudos
+                                    </strong>
+
+                                    <p>
+                                        Concluir a sessão antes do treino.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="priority-progress">
+
+                                <div class="progress-header">
+
+                                    <span>
+                                        PROGRESSO
+                                    </span>
+
+                                    <span>
+                                        0%
+                                    </span>
+
+                                </div>
+
+
+                                <div class="progress">
+
+                                    <div
+                                        class="progress-bar"
+                                        style="width: 0%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =================================================
+                             LEMBRETES
+                        ================================================== -->
+
+                        <section class="agenda-reminders panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="panel-label">
+                                        ALERTAS
+                                    </span>
+
+                                    <h2 class="panel-title">
+                                        Lembretes
+                                    </h2>
+
+                                </div>
+
+                                <span class="counter">
+                                    03
+                                </span>
+
+                            </div>
+
+
+                            <div class="reminder-list">
+
+
+                                <div class="reminder-item">
+
+                                    <span class="reminder-indicator warning"></span>
+
+                                    <div>
+
+                                        <strong>
+                                            Academia
+                                        </strong>
+
+                                        <span>
+                                            Preparar treino
+                                        </span>
+
+                                    </div>
+
+                                    <time>
+                                        16:00
+                                    </time>
+
+                                </div>
+
+
+                                <div class="reminder-item">
+
+                                    <span class="reminder-indicator info"></span>
+
+                                    <div>
+
+                                        <strong>
+                                            Projeto
+                                        </strong>
+
+                                        <span>
+                                            Continuar desenvolvimento
+                                        </span>
+
+                                    </div>
+
+                                    <time>
+                                        19:00
+                                    </time>
+
+                                </div>
+
+
+                                <div class="reminder-item">
+
+                                    <span class="reminder-indicator danger"></span>
+
+                                    <div>
+
+                                        <strong>
+                                            Conta
+                                        </strong>
+
+                                        <span>
+                                            Verificar pagamento
+                                        </span>
+
+                                    </div>
+
+                                    <time>
+                                        HOJE
+                                    </time>
+
+                                </div>
+
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =================================================
+                             RECOMENDAÇÃO
+                        ================================================== -->
+
+                        <section class="agenda-ai panel">
+
+                            <div class="ai-indicator">
+
+                                <span class="status-light online"></span>
+
+                                SEXTA-FEIRA
+
+                            </div>
+
+
+                            <h2>
+                                Recomendação
+                            </h2>
+
+
+                            <p>
+                                Seu próximo bloco importante é o estudo.
+                                Evite iniciar outra tarefa grande antes de concluí-lo.
+                            </p>
+
+
+                            <button
+                                type="button"
+                                class="button button-secondary button-full"
+                                data-action="assistant-recommendation"
+                            >
+                                ANALISAR MEU DIA
+                            </button>
+
+                        </section>
+
+                    </aside>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RODAPÉ
+                ================================================== -->
+
+                <footer class="agenda-footer">
+
+                    <span>
+                        AGENDA INTELIGENTE // SINCRONIZAÇÃO LOCAL
+                    </span>
+
+                    <span>
+                        SEXTA-FEIRA // ORGANIZAÇÃO ATIVA
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NOTIFICAÇÕES
+    ====================================================== -->
+
+    <div
+        class="system-notifications"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+     <script src="js/clock.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/assistant.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/agenda.js"></script>
+
+</body>
+
+</html>

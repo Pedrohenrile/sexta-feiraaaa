@@ -1,0 +1,3315 @@
+/* ============================================================
+   ORION — SEXTA-FEIRA
+   ASSISTANT.CSS
+   Interface de comunicação pessoal
+============================================================ */
+
+
+/* ============================================================
+   01. VARIÁVEIS
+============================================================ */
+
+:root {
+
+    --sf-bg: #040608;
+
+    --sf-panel:
+        rgba(8, 12, 17, 0.82);
+
+    --sf-panel-soft:
+        rgba(11, 16, 22, 0.62);
+
+    --sf-panel-deep:
+        rgba(3, 6, 9, 0.92);
+
+    --sf-border:
+        rgba(185, 220, 255, 0.11);
+
+    --sf-border-soft:
+        rgba(185, 220, 255, 0.07);
+
+    --sf-border-active:
+        rgba(185, 220, 255, 0.24);
+
+    --sf-text:
+        #edf3f8;
+
+    --sf-text-soft:
+        #aebbc7;
+
+    --sf-text-muted:
+        #64727f;
+
+    --sf-blue:
+        #b9dcff;
+
+    --sf-blue-soft:
+        rgba(185, 220, 255, 0.08);
+
+    --sf-blue-glow:
+        rgba(185, 220, 255, 0.16);
+
+    --sf-green:
+        #9fe6c0;
+
+    --sf-green-soft:
+        rgba(159, 230, 192, 0.08);
+
+    --sf-danger:
+        #e38f98;
+
+    --sf-radius:
+        14px;
+
+}
+
+
+/* ============================================================
+   02. INTERFACE
+============================================================ */
+
+.assistant-interface {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 68px);
+
+    padding:
+        30px 30px 22px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 17%,
+            rgba(185, 220, 255, 0.035),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 78% 65%,
+            rgba(185, 220, 255, 0.022),
+            transparent 30%
+        );
+
+}
+
+
+/* ============================================================
+   AMBIENTE HOLOGRÁFICO
+============================================================ */
+
+.assistant-interface::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(185, 220, 255, 0.018) 50%,
+            transparent 100%
+        );
+
+    opacity: 0.8;
+
+}
+
+
+.assistant-interface::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 1px;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(185, 220, 255, 0.035),
+            transparent
+        );
+
+    opacity: 0.35;
+
+}
+
+
+/* ============================================================
+   03. CABEÇALHO
+============================================================ */
+
+.assistant-header {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.assistant-header-main {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.assistant-overline {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.24em;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.assistant-header h1 {
+
+    margin: 0;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(25px, 3vw, 38px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing: 0.09em;
+
+    color:
+        var(--sf-text);
+
+    text-shadow:
+        0 0 24px
+        rgba(185, 220, 255, 0.07);
+
+}
+
+
+.assistant-header-main p {
+
+    margin: 1px 0 0;
+
+    font-size: 12px;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+/* ============================================================
+   STATUS
+============================================================ */
+
+.assistant-system-state {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 90px;
+
+    padding: 9px 12px;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius: 9px;
+
+    background:
+        rgba(7, 11, 15, 0.68);
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+
+.assistant-state-dot {
+
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--sf-green);
+
+    box-shadow:
+        0 0 8px
+        rgba(159, 230, 192, 0.6);
+
+    animation:
+        sfStatusPulse 2.8s
+        ease-in-out infinite;
+
+}
+
+
+.assistant-state-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+}
+
+
+.assistant-state-text span {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.assistant-state-text strong {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+    color:
+        var(--sf-green);
+
+}
+
+
+/* ============================================================
+   04. PRESENÇA DA SEXTA-FEIRA
+============================================================ */
+
+.assistant-presence {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    height: 270px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius:
+        var(--sf-radius);
+
+    background:
+        #020508;
+
+    box-shadow:
+        0 18px 55px
+        rgba(0, 0, 0, 0.28);
+
+}
+
+
+/* ============================================================
+   VÍDEO
+============================================================ */
+
+.presence-video {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -5;
+
+    overflow: hidden;
+
+}
+
+
+.assistant-face-video {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.03);
+
+    opacity: 0.62;
+
+    filter:
+        brightness(0.48)
+        contrast(1.3)
+        saturate(0.6);
+
+}
+
+
+/* ============================================================
+   ESCURECIMENTO
+============================================================ */
+
+.presence-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -4;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(2, 5, 8, 0.9),
+            rgba(2, 5, 8, 0.35) 45%,
+            rgba(2, 5, 8, 0.68)
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(2, 5, 8, 0.18),
+            rgba(2, 5, 8, 0.78)
+        );
+
+}
+
+
+/* ============================================================
+   GRADE
+============================================================ */
+
+.presence-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -3;
+
+    opacity: 0.22;
+
+    background-image:
+
+        linear-gradient(
+            rgba(185, 220, 255, 0.055) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(185, 220, 255, 0.055) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        26px 26px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            transparent,
+            black 18%,
+            black 82%,
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   SCANNER
+============================================================ */
+
+.presence-scan {
+
+    position: absolute;
+
+    left: 0;
+
+    top: -30%;
+
+    width: 100%;
+
+    height: 25%;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(185, 220, 255, 0.09),
+            transparent
+        );
+
+    filter:
+        blur(1px);
+
+    animation:
+        sfPresenceScan 7s
+        ease-in-out infinite;
+
+}
+
+
+/* ============================================================
+   LINHA SUPERIOR
+============================================================ */
+
+.assistant-presence::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+
+    right: 8%;
+
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 220, 255, 0.34),
+            transparent
+        );
+
+    opacity: 0.7;
+
+}
+
+
+/* ============================================================
+   HUD
+============================================================ */
+
+.presence-hud {
+
+    position: absolute;
+
+    width: 30px;
+
+    height: 30px;
+
+    opacity: 0.6;
+
+}
+
+
+.hud-top-left {
+
+    top: 14px;
+    left: 14px;
+
+    border-top:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+    border-left:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+}
+
+
+.hud-top-right {
+
+    top: 14px;
+    right: 14px;
+
+    border-top:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+    border-right:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+}
+
+
+.hud-bottom-left {
+
+    bottom: 14px;
+    left: 14px;
+
+    border-bottom:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+    border-left:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+}
+
+
+.hud-bottom-right {
+
+    right: 14px;
+    bottom: 14px;
+
+    border-right:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+    border-bottom:
+        1px solid
+        rgba(185, 220, 255, 0.38);
+
+}
+
+
+/* ============================================================
+   05. IDENTIDADE
+============================================================ */
+
+.presence-identity {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    z-index: 4;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+/* ============================================================
+   NÚCLEO
+============================================================ */
+
+.presence-core {
+
+    position: relative;
+
+    width: 66px;
+
+    height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.presence-core-ring {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.18);
+
+}
+
+
+.presence-core-ring.ring-1 {
+
+    inset: 4px;
+
+    border-top-color:
+        rgba(185, 220, 255, 0.75);
+
+    border-right-color:
+        rgba(185, 220, 255, 0.32);
+
+    animation:
+        sfCoreRotate 8s
+        linear infinite;
+
+}
+
+
+.presence-core-ring.ring-2 {
+
+    inset: 12px;
+
+    border-bottom-color:
+        rgba(185, 220, 255, 0.7);
+
+    border-left-color:
+        rgba(185, 220, 255, 0.3);
+
+    animation:
+        sfCoreRotateReverse 5s
+        linear infinite;
+
+}
+
+
+.presence-core-center {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.32);
+
+    border-radius: 50%;
+
+    background:
+        rgba(185, 220, 255, 0.055);
+
+    font-size: 13px;
+
+    color:
+        var(--sf-blue);
+
+    text-shadow:
+        0 0 14px
+        rgba(185, 220, 255, 0.75);
+
+    box-shadow:
+        0 0 24px
+        rgba(185, 220, 255, 0.06);
+
+}
+
+
+/* ============================================================
+   TÍTULO DA PRESENÇA
+============================================================ */
+
+.presence-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.presence-title span {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 0.2em;
+
+    color:
+        rgba(185, 220, 255, 0.5);
+
+}
+
+
+.presence-title strong {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(18px, 2vw, 25px);
+
+    font-weight: 500;
+
+    letter-spacing: 0.11em;
+
+    color:
+        var(--sf-text);
+
+    text-shadow:
+        0 0 20px
+        rgba(185, 220, 255, 0.1);
+
+}
+
+
+.presence-title small {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+
+    color:
+        rgba(185, 220, 255, 0.45);
+
+}
+
+
+/* ============================================================
+   STATUS DA PRESENÇA
+============================================================ */
+
+.presence-status {
+
+    position: absolute;
+
+    right: 18px;
+
+    bottom: 17px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 9px;
+
+    border:
+        1px solid
+        rgba(159, 230, 192, 0.1);
+
+    border-radius: 7px;
+
+    background:
+        rgba(4, 8, 11, 0.5);
+
+    backdrop-filter:
+        blur(8px);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.12em;
+
+    color:
+        rgba(159, 230, 192, 0.7);
+
+}
+
+
+.presence-status-dot {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        var(--sf-green);
+
+    box-shadow:
+        0 0 7px
+        rgba(159, 230, 192, 0.6);
+
+}
+
+
+/* ============================================================
+   06. COMUNICAÇÃO
+============================================================ */
+
+.assistant-communication {
+
+    position: relative;
+
+    z-index: 4;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(0, 1fr);
+
+    gap: 14px;
+
+    margin-top: 14px;
+
+}
+
+
+/* ============================================================
+   07. HISTÓRICO
+============================================================ */
+
+.assistant-history {
+
+    position: relative;
+
+    min-width: 0;
+
+    height: 455px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius:
+        var(--sf-radius);
+
+    background:
+        linear-gradient(
+            150deg,
+            rgba(12, 17, 23, 0.9),
+            rgba(5, 8, 11, 0.92)
+        );
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* ============================================================
+   CABEÇALHO DO HISTÓRICO
+============================================================ */
+
+.assistant-history-header {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        14px 14px 13px;
+
+    border-bottom:
+        1px solid
+        var(--sf-border);
+
+}
+
+
+.assistant-history-label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.18em;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.assistant-history-header h2 {
+
+    margin: 0;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    color:
+        var(--sf-text);
+
+}
+
+
+/* ============================================================
+   NOVA CONVERSA
+============================================================ */
+
+.assistant-new-chat {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius: 8px;
+
+    background:
+        rgba(185, 220, 255, 0.025);
+
+    color:
+        var(--sf-blue);
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        border-color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+
+}
+
+
+.assistant-new-chat:hover {
+
+    border-color:
+        var(--sf-border-active);
+
+    background:
+        var(--sf-blue-soft);
+
+    box-shadow:
+        0 0 18px
+        rgba(185, 220, 255, 0.07);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* ============================================================
+   LISTA
+============================================================ */
+
+.assistant-history-list {
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 8px;
+
+    overflow-y: auto;
+
+}
+
+
+.assistant-history-list::-webkit-scrollbar {
+
+    width: 3px;
+
+}
+
+
+.assistant-history-list::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background:
+        rgba(185, 220, 255, 0.12);
+
+}
+
+
+/* ============================================================
+   HISTÓRICO VAZIO
+============================================================ */
+
+.assistant-history-empty {
+
+    min-height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    text-align: center;
+
+}
+
+
+.assistant-history-empty span {
+
+    font-size: 23px;
+
+    color:
+        rgba(185, 220, 255, 0.18);
+
+}
+
+
+.assistant-history-empty p {
+
+    max-width: 145px;
+
+    margin: 0;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+/* ============================================================
+   ITEM
+============================================================ */
+
+.assistant-history-item {
+
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+        9px 10px;
+
+    margin-bottom: 3px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 7px;
+
+    background:
+        transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease;
+
+}
+
+
+.assistant-history-item:hover {
+
+    border-color:
+        var(--sf-border);
+
+    background:
+        rgba(185, 220, 255, 0.035);
+
+}
+
+
+.assistant-history-item.active {
+
+    border-color:
+        rgba(185, 220, 255, 0.15);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(185, 220, 255, 0.075),
+            rgba(185, 220, 255, 0.02)
+        );
+
+}
+
+
+.assistant-history-item-title {
+
+    overflow: hidden;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    color:
+        var(--sf-text-soft);
+
+}
+
+
+.assistant-history-item-date {
+
+    margin-top: 3px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.09em;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+/* ============================================================
+   FOOTER HISTÓRICO
+============================================================ */
+
+.assistant-history-footer {
+
+    padding: 8px;
+
+    border-top:
+        1px solid
+        var(--sf-border);
+
+}
+
+
+.assistant-history-action {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 7px;
+
+    background:
+        transparent;
+
+    color:
+        var(--sf-text-muted);
+
+    font-size: 8px;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
+
+}
+
+
+.assistant-history-action span:first-child {
+
+    font-size: 13px;
+
+}
+
+
+.assistant-history-action:hover {
+
+    border-color:
+        rgba(227, 143, 152, 0.12);
+
+    background:
+        rgba(227, 143, 152, 0.035);
+
+    color:
+        var(--sf-danger);
+
+}
+
+
+/* ============================================================
+   08. CHAT
+============================================================ */
+
+.assistant-chat {
+
+    position: relative;
+
+    min-width: 0;
+
+    height: 455px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius:
+        var(--sf-radius);
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(185, 220, 255, 0.025),
+            transparent 42%
+        ),
+
+        rgba(4, 8, 11, 0.91);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* ============================================================
+   LINHA DE SCAN DO CHAT
+============================================================ */
+
+.assistant-chat::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -25%;
+
+    top: 0;
+
+    width: 25%;
+
+    height: 1px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 220, 255, 0.42),
+            transparent
+        );
+
+    animation:
+        sfHorizontalScan 8s
+        linear infinite;
+
+}
+
+
+/* ============================================================
+   CABEÇALHO CHAT
+============================================================ */
+
+.assistant-chat-header {
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        9px 15px;
+
+    border-bottom:
+        1px solid
+        var(--sf-border);
+
+    background:
+        rgba(8, 12, 17, 0.48);
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+
+/* ============================================================
+   IDENTIDADE CHAT
+============================================================ */
+
+.assistant-chat-identity {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+
+.assistant-core-mini {
+
+    position: relative;
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.assistant-core-ring {
+
+    position: absolute;
+
+    inset: 3px;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.18);
+
+    border-radius: 50%;
+
+}
+
+
+.assistant-core-ring.ring-a {
+
+    border-top-color:
+        rgba(185, 220, 255, 0.7);
+
+    animation:
+        sfCoreRotate 8s
+        linear infinite;
+
+}
+
+
+.assistant-core-ring.ring-b {
+
+    inset: 8px;
+
+    border-bottom-color:
+        rgba(185, 220, 255, 0.5);
+
+    animation:
+        sfCoreRotateReverse 5s
+        linear infinite;
+
+}
+
+
+.assistant-core-center {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 10px;
+
+    color:
+        var(--sf-blue);
+
+    text-shadow:
+        0 0 11px
+        rgba(185, 220, 255, 0.55);
+
+}
+
+
+.assistant-chat-title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.assistant-chat-title span {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.15em;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.assistant-chat-title strong {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+
+    color:
+        var(--sf-text);
+
+}
+
+
+/* ============================================================
+   CONTEXTO
+============================================================ */
+
+.assistant-context-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(159, 230, 192, 0.1);
+
+    border-radius: 6px;
+
+    background:
+        rgba(159, 230, 192, 0.025);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.08em;
+
+    white-space: nowrap;
+
+    color:
+        rgba(159, 230, 192, 0.68);
+
+}
+
+
+.context-indicator {
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+        var(--sf-green);
+
+    box-shadow:
+        0 0 6px
+        rgba(159, 230, 192, 0.5);
+
+}
+
+
+/* ============================================================
+   09. MENSAGENS
+============================================================ */
+
+.assistant-messages {
+
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding:
+        20px;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(185, 220, 255, 0.1)
+        transparent;
+
+}
+
+
+.assistant-messages::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+
+.assistant-messages::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background:
+        rgba(185, 220, 255, 0.1);
+
+}
+
+
+/* ============================================================
+   ESTADO VAZIO
+============================================================ */
+
+.assistant-messages.is-empty {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* ============================================================
+   NÚCLEO VAZIO
+============================================================ */
+
+.assistant-messages.is-empty::before {
+
+    content: "◈";
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.07);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 17px;
+
+    color:
+        rgba(185, 220, 255, 0.16);
+
+    text-shadow:
+        0 0 20px
+        rgba(185, 220, 255, 0.25);
+
+    box-shadow:
+        0 0 45px
+        rgba(185, 220, 255, 0.025);
+
+}
+
+
+.assistant-messages.is-empty::after {
+
+    content: "CANAL PRONTO";
+
+    position: absolute;
+
+    top:
+        calc(50% + 48px);
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.2em;
+
+    color:
+        rgba(185, 220, 255, 0.25);
+
+}
+
+
+/* ============================================================
+   MENSAGEM
+============================================================ */
+
+.assistant-message {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    animation:
+        sfMessageAppear 260ms
+        ease both;
+
+}
+
+
+.assistant-message:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.message-avatar {
+
+    width: 28px;
+
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius: 7px;
+
+    background:
+        rgba(185, 220, 255, 0.035);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    color:
+        var(--sf-blue);
+
+}
+
+
+.message-content {
+
+    min-width: 0;
+
+    flex: 1;
+
+}
+
+
+.message-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.message-header strong {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+
+    color:
+        var(--sf-blue);
+
+}
+
+
+.message-header span {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.message-body {
+
+    max-width: 800px;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color:
+        var(--sf-text-soft);
+
+}
+
+
+.message-body p {
+
+    margin:
+        0 0 8px;
+
+}
+
+
+.message-body p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.message-body strong {
+
+    font-weight: 600;
+
+    color:
+        var(--sf-text);
+
+}
+
+
+.message-body em {
+
+    color:
+        var(--sf-text-soft);
+
+}
+
+
+.message-body code {
+
+    padding:
+        2px 5px;
+
+    border:
+        1px solid
+        var(--sf-border);
+
+    border-radius: 4px;
+
+    background:
+        rgba(185, 220, 255, 0.05);
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+
+    color:
+        var(--sf-blue);
+
+}
+
+
+/* ============================================================
+   LISTAS
+============================================================ */
+
+.message-body ul {
+
+    margin:
+        7px 0;
+
+    padding-left:
+        18px;
+
+}
+
+
+.message-body li {
+
+    margin:
+        4px 0;
+
+}
+
+
+.message-body h2,
+.message-body h3,
+.message-body h4 {
+
+    margin:
+        12px 0 6px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-weight: 500;
+
+    color:
+        var(--sf-text);
+
+}
+
+
+.message-body h2 {
+
+    font-size: 14px;
+
+}
+
+
+.message-body h3 {
+
+    font-size: 12px;
+
+}
+
+
+.message-body h4 {
+
+    font-size: 10px;
+
+}
+
+
+/* ============================================================
+   MENSAGEM DO USUÁRIO
+============================================================ */
+
+.assistant-message-user {
+
+    justify-content: flex-end;
+
+}
+
+
+.assistant-message-user .message-avatar {
+
+    order: 2;
+
+    background:
+        rgba(185, 220, 255, 0.055);
+
+}
+
+
+.assistant-message-user .message-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+}
+
+
+.assistant-message-user .message-header {
+
+    justify-content: flex-end;
+
+}
+
+
+.assistant-message-user .message-body {
+
+    padding:
+        9px 12px;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.09);
+
+    border-radius:
+        10px 3px 10px 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(185, 220, 255, 0.07),
+            rgba(185, 220, 255, 0.022)
+        );
+
+    color:
+        var(--sf-text);
+
+}
+
+
+/* ============================================================
+   PROCESSAMENTO
+============================================================ */
+
+.assistant-processing {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    animation:
+        sfMessageAppear 200ms
+        ease both;
+
+}
+
+
+.processing-avatar {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.18);
+
+    border-radius: 7px;
+
+    color:
+        var(--sf-blue);
+
+    font-size: 10px;
+
+    animation:
+        sfProcessingPulse 1.2s
+        ease-in-out infinite;
+
+}
+
+
+.processing-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.processing-content strong {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+
+    color:
+        var(--sf-blue);
+
+}
+
+
+.processing-content span {
+
+    font-size: 9px;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+/* ============================================================
+   10. INPUT
+============================================================ */
+
+.assistant-input-container {
+
+    position: relative;
+
+    padding:
+        11px 13px 10px;
+
+    border-top:
+        1px solid
+        var(--sf-border);
+
+    background:
+        rgba(3, 6, 9, 0.72);
+
+}
+
+
+.assistant-input-glow {
+
+    position: absolute;
+
+    top: -1px;
+
+    left: 18%;
+
+    width: 64%;
+
+    height: 1px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(185, 220, 255, 0.22),
+            transparent
+        );
+
+}
+
+
+.assistant-input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 6px;
+
+    padding:
+        7px;
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.1);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(9, 13, 18, 0.82);
+
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+
+}
+
+
+.assistant-input-wrapper:focus-within {
+
+    border-color:
+        rgba(185, 220, 255, 0.22);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(185, 220, 255, 0.018),
+
+        0 0 28px
+        rgba(185, 220, 255, 0.025);
+
+}
+
+
+.assistant-input {
+
+    width: 100%;
+
+    min-height: 25px;
+
+    max-height: 160px;
+
+    resize: none;
+
+    overflow-y: auto;
+
+    padding:
+        5px 6px;
+
+    border: 0;
+
+    outline: 0;
+
+    background:
+        transparent;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color:
+        var(--sf-text);
+
+}
+
+
+.assistant-input::placeholder {
+
+    color:
+        #52606c;
+
+}
+
+
+.assistant-input::-webkit-scrollbar {
+
+    width: 3px;
+
+}
+
+
+.assistant-input::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(185, 220, 255, 0.1);
+
+}
+
+
+/* ============================================================
+   CONTROLES
+============================================================ */
+
+.assistant-input-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.assistant-microphone,
+.assistant-send {
+
+    width: 30px;
+
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        transform 180ms ease;
+
+}
+
+
+.assistant-microphone {
+
+    border:
+        1px solid transparent;
+
+    background:
+        transparent;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.assistant-microphone:hover {
+
+    border-color:
+        var(--sf-border);
+
+    background:
+        rgba(185, 220, 255, 0.035);
+
+    color:
+        var(--sf-blue);
+
+}
+
+
+.assistant-send {
+
+    border:
+        1px solid
+        rgba(185, 220, 255, 0.15);
+
+    background:
+        rgba(185, 220, 255, 0.065);
+
+    color:
+        var(--sf-blue);
+
+    font-size: 15px;
+
+}
+
+
+.assistant-send:hover {
+
+    border-color:
+        rgba(185, 220, 255, 0.28);
+
+    background:
+        rgba(185, 220, 255, 0.11);
+
+    box-shadow:
+        0 0 17px
+        rgba(185, 220, 255, 0.06);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.assistant-send:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ============================================================
+   FOOTER DO INPUT
+============================================================ */
+
+.assistant-input-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding:
+        6px 1px 0;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 5px;
+
+    letter-spacing: 0.12em;
+
+    color:
+        #46535e;
+
+}
+
+
+.assistant-input-footer span:nth-child(2) {
+
+    color:
+        rgba(159, 230, 192, 0.5);
+
+}
+
+
+/* ============================================================
+   11. FOOTER
+============================================================ */
+
+.assistant-footer {
+
+    position: relative;
+
+    z-index: 4;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 13px;
+
+    padding:
+        10px 3px 0;
+
+    border-top:
+        1px solid
+        var(--sf-border-soft);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.1em;
+
+    color:
+        var(--sf-text-muted);
+
+}
+
+
+.assistant-footer-left,
+.assistant-footer-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+.assistant-footer-left span:first-child {
+
+    color:
+        var(--sf-blue);
+
+}
+
+
+.assistant-footer-right {
+
+    justify-content: flex-end;
+
+}
+
+
+.assistant-footer-center {
+
+    text-align: center;
+
+    opacity: 0.55;
+
+}
+
+
+.footer-status {
+
+    color:
+        rgba(159, 230, 192, 0.62);
+
+}
+
+
+/* ============================================================
+   12. ANIMAÇÕES
+============================================================ */
+
+@keyframes sfStatusPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.5;
+
+        box-shadow:
+            0 0 5px
+            rgba(159, 230, 192, 0.3);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 11px
+            rgba(159, 230, 192, 0.65);
+
+    }
+
+}
+
+
+@keyframes sfCoreRotate {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes sfCoreRotateReverse {
+
+    from {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes sfHorizontalScan {
+
+    0% {
+
+        left: -30%;
+
+        opacity: 0;
+
+    }
+
+    12% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        opacity: 0.7;
+
+    }
+
+    88% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        left: 105%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes sfPresenceScan {
+
+    0% {
+
+        top: -30%;
+
+        opacity: 0;
+
+    }
+
+    12% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        opacity: 0.55;
+
+    }
+
+    88% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        top: 105%;
+
+        opacity: 0;
+
+    }
+
+}
+
+
+@keyframes sfMessageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(5px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes sfProcessingPulse {
+
+    0%,
+    100% {
+
+        opacity: 0.4;
+
+        transform:
+            scale(0.94);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* ============================================================
+   13. TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
+    .assistant-interface {
+
+        padding:
+            25px 22px 20px;
+
+    }
+
+
+    .assistant-communication {
+
+        grid-template-columns:
+            190px
+            minmax(0, 1fr);
+
+    }
+
+
+    .assistant-history {
+
+        height: 430px;
+
+    }
+
+
+    .assistant-chat {
+
+        height: 430px;
+
+    }
+
+}
+
+
+/* ============================================================
+   14. MOBILE
+============================================================ */
+
+@media (max-width: 820px) {
+
+    .assistant-interface {
+
+        padding:
+            20px 16px;
+
+    }
+
+
+    .assistant-header {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .assistant-system-state {
+
+        display: none;
+
+    }
+
+
+    .assistant-presence {
+
+        height: 240px;
+
+    }
+
+
+    .assistant-communication {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .assistant-history {
+
+        height: auto;
+
+        max-height: 190px;
+
+    }
+
+
+    .assistant-history-list {
+
+        max-height: 95px;
+
+    }
+
+
+    .assistant-history-footer {
+
+        display: none;
+
+    }
+
+
+    .assistant-chat {
+
+        height: 560px;
+
+    }
+
+
+    .assistant-footer {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .assistant-footer-center {
+
+        display: none;
+
+    }
+
+}
+
+
+/* ============================================================
+   15. CELULAR
+============================================================ */
+
+@media (max-width: 560px) {
+
+    .assistant-interface {
+
+        padding:
+            17px 11px;
+
+    }
+
+
+    .assistant-header {
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .assistant-header h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .assistant-header-main p {
+
+        font-size: 10px;
+
+    }
+
+
+    .assistant-presence {
+
+        height: 210px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .presence-identity {
+
+        gap: 12px;
+
+    }
+
+
+    .presence-core {
+
+        width: 52px;
+
+        height: 52px;
+
+    }
+
+
+    .presence-core-center {
+
+        width: 23px;
+
+        height: 23px;
+
+        font-size: 10px;
+
+    }
+
+
+    .presence-title strong {
+
+        font-size: 16px;
+
+    }
+
+
+    .presence-status {
+
+        right: 11px;
+
+        bottom: 11px;
+
+    }
+
+
+    .assistant-chat {
+
+        height: 540px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .assistant-chat-header {
+
+        padding:
+            9px 11px;
+
+    }
+
+
+    .assistant-context-status {
+
+        display: none;
+
+    }
+
+
+    .assistant-messages {
+
+        padding:
+            16px 12px;
+
+    }
+
+
+    .assistant-message {
+
+        gap: 7px;
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .message-avatar {
+
+        width: 26px;
+
+        height: 26px;
+
+    }
+
+
+    .message-body {
+
+        font-size: 11px;
+
+        line-height: 1.65;
+
+    }
+
+
+    .assistant-input-container {
+
+        padding:
+            9px 10px;
+
+    }
+
+
+    .assistant-input {
+
+        font-size: 11px;
+
+    }
+
+
+    .assistant-input-footer span:nth-child(3) {
+
+        display: none;
+
+    }
+
+
+    .assistant-footer {
+
+        font-size: 5px;
+
+    }
+
+}
+
+
+/* ============================================================
+   16. ACESSIBILIDADE
+============================================================ */
+
+.assistant-new-chat:focus-visible,
+.assistant-history-action:focus-visible,
+.assistant-history-item:focus-visible,
+.assistant-microphone:focus-visible,
+.assistant-send:focus-visible {
+
+    outline:
+        1px solid
+        rgba(185, 220, 255, 0.42);
+
+    outline-offset: 3px;
+
+}
+
+
+/* ============================================================
+   17. REDUÇÃO DE MOVIMENTO
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .assistant-state-dot,
+    .presence-scan,
+    .presence-core-ring,
+    .assistant-core-ring,
+    .assistant-chat::before,
+    .assistant-message,
+    .assistant-processing,
+    .assistant-interface::before {
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   HISTÓRICO — CONTROLES
+   ========================================================= */
+
+.assistant-history-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.assistant-history-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    height: 32px;
+    padding: 0 10px;
+
+    border: 1px solid var(--assistant-border);
+    border-radius: 7px;
+
+    background: transparent;
+    color: var(--assistant-text-muted);
+
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.assistant-history-action:hover {
+    color: var(--assistant-text);
+    border-color: var(--assistant-accent);
+    background: rgba(185, 220, 255, 0.05);
+}
+
+.assistant-history-action.danger:hover {
+    color: var(--assistant-danger);
+    border-color: rgba(227, 143, 152, 0.45);
+    background: rgba(227, 143, 152, 0.05);
+}
+
+.assistant-history-action-icon {
+    font-size: 13px;
+    line-height: 1;
+}
+
+.assistant-history-action-label {
+    white-space: nowrap;
+}
+
+
+
+
+
+
+/* =========================================================
+   HISTÓRICO — BOTÃO EXCLUIR
+   ========================================================= */
+
+.assistant-history-item {
+    position: relative;
+    padding-right: 42px;
+}
+
+.assistant-history-delete {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    width: 24px;
+    height: 24px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    background: transparent;
+    color: var(--assistant-text-muted);
+
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.assistant-history-item:hover .assistant-history-delete {
+    opacity: 1;
+}
+
+.assistant-history-delete:hover {
+    color: var(--assistant-danger);
+    background: rgba(227, 143, 152, 0.06);
+    border-color: rgba(227, 143, 152, 0.25);
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   CELULAR — HISTÓRICO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .assistant-history-item {
+        padding-right: 44px;
+        min-height: 52px;
+    }
+
+    .assistant-history-delete {
+        width: 32px;
+        height: 32px;
+
+        right: 8px;
+
+        opacity: 1;
+
+        font-size: 18px;
+    }
+
+    .assistant-history-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .assistant-history-action {
+        width: 100%;
+        min-height: 38px;
+    }
+}

@@ -1,0 +1,567 @@
+/* =========================================================
+   ORION — CORE DESIGN SYSTEM
+   Arquivo: css/core.css
+   Função: Base visual e estrutural de todo o sistema
+   ========================================================= */
+
+
+/* =========================================================
+   01. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-interface);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* =========================================================
+   02. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+
+    /* -----------------------------------------------------
+       CORES — FUNDO
+       ----------------------------------------------------- */
+
+    --color-background: #040608;
+    --color-background-soft: #070a0e;
+
+    --color-surface: #090d12;
+    --color-surface-2: #0c1117;
+    --color-surface-3: #10161d;
+
+
+    /* -----------------------------------------------------
+       CORES — BORDAS
+       ----------------------------------------------------- */
+
+    --color-border: rgba(180, 205, 230, 0.08);
+    --color-border-soft: rgba(180, 205, 230, 0.05);
+    --color-border-strong: rgba(180, 205, 230, 0.16);
+
+
+    /* -----------------------------------------------------
+       CORES — TEXTO
+       ----------------------------------------------------- */
+
+    --color-text: #edf3f8;
+    --color-text-soft: #b9c4ce;
+    --color-text-muted: #788592;
+    --color-text-dim: #46515c;
+
+
+    /* -----------------------------------------------------
+       CORES — DESTAQUE
+       ----------------------------------------------------- */
+
+    --color-accent: #b9dcff;
+    --color-accent-bright: #edf7ff;
+    --color-accent-soft: rgba(185, 220, 255, 0.12);
+    --color-accent-glow: rgba(185, 220, 255, 0.25);
+
+
+    /* -----------------------------------------------------
+       CORES — STATUS
+       ----------------------------------------------------- */
+
+    --color-online: #9fe6c0;
+    --color-warning: #e8c989;
+    --color-danger: #e38f98;
+    --color-info: #9fc8ed;
+
+
+    /* -----------------------------------------------------
+       CORES — BÁSICAS
+       ----------------------------------------------------- */
+
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+
+    /* -----------------------------------------------------
+       TIPOGRAFIA
+       ----------------------------------------------------- */
+
+    --font-interface: "Inter", sans-serif;
+    --font-display: "Orbitron", sans-serif;
+
+
+    /* -----------------------------------------------------
+       TAMANHOS DE FONTE
+       ----------------------------------------------------- */
+
+    --text-xs: 0.68rem;
+    --text-sm: 0.78rem;
+    --text-md: 0.9rem;
+    --text-lg: 1rem;
+    --text-xl: 1.2rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.8rem;
+
+
+    /* -----------------------------------------------------
+       PESOS
+       ----------------------------------------------------- */
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+
+    /* -----------------------------------------------------
+       ESPAÇAMENTOS
+       ----------------------------------------------------- */
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 28px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+
+
+    /* -----------------------------------------------------
+       BORDER RADIUS
+       ----------------------------------------------------- */
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 18px;
+    --radius-round: 999px;
+
+
+    /* -----------------------------------------------------
+       SOMBRAS
+       ----------------------------------------------------- */
+
+    --shadow-sm:
+        0 4px 14px rgba(0, 0, 0, 0.25);
+
+    --shadow-md:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    --shadow-lg:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    --shadow-glow:
+        0 0 30px var(--color-accent-glow);
+
+
+    /* -----------------------------------------------------
+       TRANSIÇÕES
+       ----------------------------------------------------- */
+
+    --transition-fast: 140ms ease;
+    --transition-normal: 220ms ease;
+    --transition-slow: 420ms ease;
+
+
+    /* -----------------------------------------------------
+       Z-INDEX
+       ----------------------------------------------------- */
+
+    --z-background: 0;
+    --z-content: 10;
+    --z-sidebar: 100;
+    --z-topbar: 200;
+    --z-overlay: 500;
+    --z-modal: 1000;
+    --z-notification: 2000;
+
+
+    /* -----------------------------------------------------
+       LARGURAS
+       ----------------------------------------------------- */
+
+    --sidebar-width: 270px;
+    --content-max-width: 1800px;
+}
+
+
+/* =========================================================
+   03. SELEÇÃO DE TEXTO
+   ========================================================= */
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-background);
+}
+
+
+/* =========================================================
+   04. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-surface-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-round);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-soft);
+}
+
+
+/* =========================================================
+   05. TIPOGRAFIA
+   ========================================================= */
+
+.font-interface {
+    font-family: var(--font-interface);
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.text-md {
+    font-size: var(--text-md);
+}
+
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+.text-2xl {
+    font-size: var(--text-2xl);
+}
+
+.text-3xl {
+    font-size: var(--text-3xl);
+}
+
+.text-4xl {
+    font-size: var(--text-4xl);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-soft {
+    color: var(--color-text-soft);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-online {
+    color: var(--color-online);
+}
+
+.text-warning {
+    color: var(--color-warning);
+}
+
+.text-danger {
+    color: var(--color-danger);
+}
+
+
+/* =========================================================
+   06. PESOS DE TEXTO
+   ========================================================= */
+
+.weight-light {
+    font-weight: var(--weight-light);
+}
+
+.weight-regular {
+    font-weight: var(--weight-regular);
+}
+
+.weight-medium {
+    font-weight: var(--weight-medium);
+}
+
+.weight-semibold {
+    font-weight: var(--weight-semibold);
+}
+
+.weight-bold {
+    font-weight: var(--weight-bold);
+}
+
+
+/* =========================================================
+   07. UTILITÁRIOS
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+/* =========================================================
+   08. SUPERFÍCIE GLASS
+   ========================================================= */
+
+.glass {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.008)
+        ),
+        var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   09. GRID TECNOLÓGICO
+   ========================================================= */
+
+.tech-grid {
+    position: relative;
+    isolation: isolate;
+}
+
+.tech-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(185, 220, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(185, 220, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================================
+   10. INDICADOR DE SISTEMA
+   ========================================================= */
+
+.system-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--color-online);
+
+    box-shadow:
+        0 0 8px rgba(159, 230, 192, 0.7);
+
+    flex-shrink: 0;
+}
+
+.system-dot.warning {
+    background: var(--color-warning);
+
+    box-shadow:
+        0 0 8px rgba(232, 201, 137, 0.7);
+}
+
+.system-dot.danger {
+    background: var(--color-danger);
+
+    box-shadow:
+        0 0 8px rgba(227, 143, 152, 0.7);
+}
+
+.system-dot.info {
+    background: var(--color-info);
+
+    box-shadow:
+        0 0 8px rgba(159, 200, 237, 0.7);
+}
+
+
+/* =========================================================
+   11. DIVISOR TECNOLÓGICO
+   ========================================================= */
+
+.tech-divider {
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--color-border-strong),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   12. FOCO DE ACESSIBILIDADE
+   ========================================================= */
+
+:focus-visible {
+    outline: 1px solid var(--color-accent);
+
+    outline-offset: 3px;
+
+    box-shadow:
+        0 0 0 3px var(--color-accent-soft);
+}
+
+
+/* =========================================================
+   13. CURSOR / INTERAÇÃO
+   ========================================================= */
+
+button,
+a,
+[role="button"] {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   14. REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
